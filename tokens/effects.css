@@ -1,0 +1,44 @@
+/* {{COMPANY_NAME}} — Effects: radii, borders, shadows, motion
+ * Premium = near-sharp corners, deep matte shadows, a faint brass glow on emphasis. */
+
+:root {
+  /* Radii — restrained, close to sharp */
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 999px;
+
+  /* Border widths */
+  --bw-hair: 1px;
+  --bw-thick: 1.5px;
+
+  /* Shadows — deep, warm-black, low spread */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.40);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.45);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.50);
+  --shadow-lg: 0 18px 50px rgba(0,0,0,0.60);
+  --shadow-overlay: 0 30px 90px rgba(0,0,0,0.72);
+
+  /* Inner depth */
+  --inset-top: inset 0 1px 0 rgba(246,241,231,0.05);
+  --inset-press: inset 0 2px 6px rgba(0,0,0,0.5);
+
+  /* Brass glow for primary emphasis */
+  --glow-gold: 0 0 0 1px rgba(205,168,91,0.30), 0 6px 22px rgba(184,137,61,0.22);
+  --glow-gold-soft: 0 4px 18px rgba(184,137,61,0.18);
+
+  /* Focus ring */
+  --ring: 0 0 0 3px var(--focus-ring);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur: 200ms; /* @kind other */
+  --dur-slow: 360ms; /* @kind other */
+
+  /* Decorative */
+  --grain-opacity: 0.04; /* @kind other */
+}

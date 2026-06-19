@@ -1,0 +1,23 @@
+<!-- @dsCard group="Type" viewport="700x230" name="Body — Hanken Grotesk" subtitle="UI & paragraph text, four sizes" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-page); font-family: var(--font-body); padding: 24px; color: var(--text-body); }
+  .line { display: flex; align-items: baseline; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .meta { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); width: 92px; flex: none; }
+  .b-lg { font-size: 22px; font-weight: 500; color: var(--text-strong); }
+  .b-md { font-size: 18px; font-weight: 400; }
+  .b-base { font-size: 16px; font-weight: 400; }
+  .b-sm { font-size: 14px; font-weight: 400; color: var(--text-muted); }
+</style>
+</head>
+<body>
+  <div class="line"><span class="meta">22 / 500</span><span class="b-lg">Large body lead paragraph.</span></div>
+  <div class="line"><span class="meta">18 / 400</span><span class="b-md">Medium body text for secondary reading.</span></div>
+  <div class="line"><span class="meta">16 / 400</span><span class="b-base">Base body copy — a neutral sample paragraph that demonstrates the body typeface at the default reading size across a couple of lines.</span></div>
+  <div class="line" style="border:none"><span class="meta">14 / 400</span><span class="b-sm">Small print, captions, and secondary details.</span></div>
+</body>
+</html>

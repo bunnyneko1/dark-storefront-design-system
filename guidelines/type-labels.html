@@ -1,0 +1,32 @@
+<!-- @dsCard group="Type" viewport="700x170" name="Labels & Mono" subtitle="Tracked eyebrows + tabular mono for prices" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-page); padding: 26px; display: flex; flex-direction: column; gap: 20px; }
+  .grp { display: flex; flex-direction: column; gap: 10px; }
+  .meta { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); }
+  .eyebrow { font-family: var(--font-label); font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-accent); }
+  .eyebrow.wide { letter-spacing: 0.26em; color: var(--text-muted); }
+  .price { font-family: var(--font-mono); font-weight: 600; color: var(--gold-300); font-variant-numeric: tabular-nums; }
+  .sku { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); letter-spacing: 0.02em; }
+</style>
+</head>
+<body>
+  <div class="grp">
+    <span class="meta">Eyebrow · 12 / 0.16em</span>
+    <span class="eyebrow">Premium Selection</span>
+    <span class="eyebrow wide">Age Restricted · 18+</span>
+  </div>
+  <div class="grp">
+    <span class="meta">Mono · tabular numerals</span>
+    <span style="display:flex; gap:24px; align-items:baseline;">
+      <span class="price" style="font-size:28px">$54.95</span>
+      <span class="price" style="font-size:18px">$1,248.00</span>
+      <span class="sku">SKU&middot;DH-FC-20</span>
+    </span>
+  </div>
+</body>
+</html>

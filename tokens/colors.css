@@ -1,0 +1,95 @@
+/* {{COMPANY_NAME}} — Color system
+ * A warm, near-black charcoal world lit by brass/gold and oxblood ember.
+ * Base ramps first, semantic aliases below. */
+
+:root {
+  /* ——— Warm charcoal neutrals (the "smoke" ramp) ——— */
+  --ink-950: #0A0908; /* deepest page void */
+  --ink-900: #0E0C0B; /* page background */
+  --ink-850: #141210;
+  --ink-800: #1A1714; /* card / surface */
+  --ink-700: #221E1A; /* raised surface */
+  --ink-600: #2C2620; /* hairline-strong / inset */
+  --ink-500: #3A332A; /* border */
+  --ink-400: #4E4538; /* border-strong / disabled */
+  --ink-300: #6B6053;
+
+  /* ——— Cream / parchment text ramp ——— */
+  --cream-50:  #F6F1E7; /* highest-contrast text */
+  --cream-100: #EDE6D8;
+  --cream-200: #D9D0BF; /* body text */
+  --cream-300: #B7AC97;
+  --cream-400: #948A77; /* muted / secondary */
+  --cream-500: #6E6555; /* faint / disabled text */
+
+  /* ——— Brass / gold accent (the "ember light") ——— */
+  --gold-200: #F0DCA6;
+  --gold-300: #E3C77E;
+  --gold-400: #CDA85B; /* primary accent */
+  --gold-500: #B8893D;
+  --gold-600: #997230;
+  --gold-700: #6E5223;
+
+  /* ——— Oxblood ember (secondary heat) ——— */
+  --ember-300: #C9543F;
+  --ember-400: #A63B2B;
+  --ember-500: #8C2F22; /* secondary brand */
+  --ember-600: #6B241A;
+
+  /* ——— Semantic status ——— */
+  --green-500: #5E8C5A;
+  --green-300: #84B57F;
+  --amber-500: #C9A227;
+  --red-500:   #B14334;
+  --red-300:   #D06A5A;
+  --blue-400:  #5B7C99;
+
+  /* ——— Pure refs ——— */
+  --black: #000000;
+  --white: #FFFFFF;
+
+  /* ===== Semantic aliases ===== */
+  /* Surfaces */
+  --bg-page:        var(--ink-900);
+  --bg-void:        var(--ink-950);
+  --surface-card:   var(--ink-800);
+  --surface-raised: var(--ink-700);
+  --surface-inset:  var(--ink-850);
+  --surface-overlay: rgba(10, 9, 8, 0.72);
+
+  /* Text */
+  --text-strong:  var(--cream-50);
+  --text-body:    var(--cream-200);
+  --text-muted:   var(--cream-400);
+  --text-faint:   var(--cream-500);
+  --text-on-gold: var(--ink-950);
+  --text-on-ember: var(--cream-50);
+  --text-accent:  var(--gold-400);
+
+  /* Lines & borders */
+  --line:         rgba(246, 241, 231, 0.09);
+  --line-strong:  rgba(246, 241, 231, 0.16);
+  --line-gold:    rgba(205, 168, 91, 0.38);
+  --border:       var(--ink-500);
+  --border-strong: var(--ink-400);
+
+  /* Accent roles */
+  --accent:        var(--gold-400);
+  --accent-hover:  var(--gold-300);
+  --accent-press:  var(--gold-500);
+  --accent-soft:   rgba(205, 168, 91, 0.12);
+  --secondary:     var(--ember-500);
+  --secondary-hover: var(--ember-400);
+
+  /* Status roles */
+  --success: var(--green-500);
+  --warning: var(--amber-500);
+  --danger:  var(--red-500);
+  --info:    var(--blue-400);
+  --in-stock:     var(--green-300);
+  --low-stock:    var(--amber-500);
+  --out-of-stock: var(--red-300);
+
+  /* Focus */
+  --focus-ring: rgba(205, 168, 91, 0.55);
+}

@@ -1,0 +1,22 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Elevation & Glow" subtitle="Deep matte shadows + brass emphasis glow" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-page); font-family: var(--font-body); padding: 30px 24px; display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 11px; }
+  .box { width: 92px; height: 64px; background: var(--surface-card); border: 1px solid var(--line); border-radius: var(--radius-md); }
+  .t { font-family: var(--font-label); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+</style>
+</head>
+<body>
+  <div class="col"><span class="box" style="box-shadow:var(--shadow-xs)"></span><span class="t">xs</span></div>
+  <div class="col"><span class="box" style="box-shadow:var(--shadow-sm)"></span><span class="t">sm</span></div>
+  <div class="col"><span class="box" style="box-shadow:var(--shadow-md)"></span><span class="t">md</span></div>
+  <div class="col"><span class="box" style="box-shadow:var(--shadow-lg)"></span><span class="t">lg</span></div>
+  <div class="col"><span class="box" style="box-shadow:var(--shadow-overlay)"></span><span class="t">overlay</span></div>
+  <div class="col"><span class="box" style="box-shadow:var(--glow-gold); border-color:var(--line-gold)"></span><span class="t">glow · gold</span></div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Status & Stock" subtitle="Semantic colours for stock state + alerts" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-page); font-family: var(--font-body); padding: 24px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .chip { display: flex; align-items: center; gap: 9px; padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--surface-card); }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .t { display: flex; flex-direction: column; }
+  .n { font-size: 12px; font-weight: 600; color: var(--text-body); }
+  .h { font-family: var(--font-mono); font-size: 9.5px; color: var(--text-faint); }
+</style>
+</head>
+<body>
+  <div class="chip"><span class="dot" style="background:var(--in-stock)"></span><span class="t"><span class="n">In stock</span><span class="h">#84B57F</span></span></div>
+  <div class="chip"><span class="dot" style="background:var(--low-stock)"></span><span class="t"><span class="n">Low stock</span><span class="h">#C9A227</span></span></div>
+  <div class="chip"><span class="dot" style="background:var(--out-of-stock)"></span><span class="t"><span class="n">Out of stock</span><span class="h">#D06A5A</span></span></div>
+  <div class="chip"><span class="dot" style="background:var(--success)"></span><span class="t"><span class="n">Success</span><span class="h">#5E8C5A</span></span></div>
+  <div class="chip"><span class="dot" style="background:var(--danger)"></span><span class="t"><span class="n">Danger</span><span class="h">#B14334</span></span></div>
+  <div class="chip"><span class="dot" style="background:var(--info)"></span><span class="t"><span class="n">Info</span><span class="h">#5B7C99</span></span></div>
+</body>
+</html>

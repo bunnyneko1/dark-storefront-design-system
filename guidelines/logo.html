@@ -1,0 +1,32 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Logo & Monogram" subtitle="Wordmark + ember monogram, on dark" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-page); font-family: var(--font-body); padding: 28px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+  .mark { display: flex; align-items: center; gap: 18px; }
+  .lozenge { position: relative; width: 56px; height: 56px; display: grid; place-items: center; }
+  .lozenge svg { width: 100%; height: 100%; }
+  .word { display: flex; flex-direction: column; gap: 4px; }
+  .name { font-family: var(--font-display); font-size: 40px; font-weight: 600; letter-spacing: 0.04em; color: var(--text-strong); line-height: 1; }
+  .tag { font-family: var(--font-label); font-size: 11px; font-weight: 600; letter-spacing: 0.42em; text-transform: uppercase; color: var(--gold-400); padding-left: 2px; }
+  .swatch { width: 70px; height: 70px; background: var(--ink-950); border: 1px solid var(--line-gold); border-radius: var(--radius-sm); display:grid; place-items:center; }
+</style>
+</head>
+<body>
+  <div class="mark">
+    <div class="lozenge">
+      <svg viewBox="0 0 64 64"><path d="M32 8 L52 32 L32 56 L12 32 Z" fill="none" stroke="#CDA85B" stroke-width="1.6"/><path d="M32 18 L44 32 L32 46 L20 32 Z" fill="#1A1714"/><circle cx="32" cy="32" r="5" fill="#A63B2B"/><circle cx="32" cy="32" r="2.2" fill="#E3C77E"/></svg>
+    </div>
+    <div class="word">
+      <span class="name">{{COMPANY_NAME}}</span>
+      <span class="tag">{{COMPANY_TAGLINE}}</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <svg viewBox="0 0 64 64" width="40" height="40"><path d="M32 8 L52 32 L32 56 L12 32 Z" fill="none" stroke="#CDA85B" stroke-width="1.8"/><path d="M32 18 L44 32 L32 46 L20 32 Z" fill="#0E0C0B"/><circle cx="32" cy="32" r="5" fill="#A63B2B"/><circle cx="32" cy="32" r="2.2" fill="#E3C77E"/></svg>
+  </div>
+</body>
+</html>
