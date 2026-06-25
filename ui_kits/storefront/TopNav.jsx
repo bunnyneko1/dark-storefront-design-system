@@ -4,7 +4,7 @@ function TopNav({ cartCount, onCartClick, onHome, onCategory, products = [], onO
   const Ic = window.Icon;
   const isMobile = window.useIsMobile();
   const links = [
-    ['All', 'all'], ['{{CATEGORY_1}}', 'cat-1'], ['{{CATEGORY_2}}', 'cat-2'],
+    ['All', 'all'], ['Regular', 'regular'], ['Menthol', 'menthol'],
   ];
   const [active, setActive] = React.useState('All');
   const [searchOpen, setSearchOpen] = React.useState(false);
@@ -32,12 +32,8 @@ function TopNav({ cartCount, onCartClick, onHome, onCategory, products = [], onO
     <header style={{ position: 'sticky', top: 0, zIndex: 40, height: 'var(--nav-height)', background: 'rgba(14,12,11,0.86)', backdropFilter: 'blur(14px)', borderBottom: '1px solid var(--line)' }}>
       <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', height: '100%', padding: '0 var(--gutter)', display: 'flex', alignItems: 'center', gap: isMobile ? 14 : 32 }}>
         {/* Logo */}
-        <div onClick={onHome} style={{ display: 'flex', alignItems: 'center', gap: 12, flex: 'none', cursor: onHome ? 'pointer' : 'default' }}>
-          <svg viewBox="0 0 64 64" width="34" height="34"><path d="M32 8 L52 32 L32 56 L12 32 Z" fill="none" stroke="#CDA85B" strokeWidth="1.8"/><path d="M32 18 L44 32 L32 46 L20 32 Z" fill="#0E0C0B"/><circle cx="32" cy="32" r="5" fill="#A63B2B"/><circle cx="32" cy="32" r="2.2" fill="#E3C77E"/></svg>
-          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
-            <span style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 600, letterSpacing: '0.05em', color: 'var(--text-strong)' }}>{'{{COMPANY_NAME}}'}</span>
-            <span style={{ fontFamily: 'var(--font-label)', fontSize: 8, fontWeight: 600, letterSpacing: '0.34em', textTransform: 'uppercase', color: 'var(--gold-400)', marginTop: 3 }}>{'{{COMPANY_TAGLINE}}'}</span>
-          </div>
+        <div onClick={onHome} style={{ display: 'flex', alignItems: 'center', gap: 12, flex: 'none', cursor: onHome ? 'pointer' : 'default', minWidth: 40, minHeight: 40 }}>
+          {/* logo icon + company name intentionally left blank */}
         </div>
 
         {/* Links */}
@@ -92,7 +88,7 @@ function TopNav({ cartCount, onCartClick, onHome, onCategory, products = [], onO
               <input ref={inputRef} value={query} onChange={e => setQuery(e.target.value)} placeholder="Search brands, products…" style={{ flex: 1, background: 'none', border: 'none', outline: 'none', color: 'var(--text-strong)', fontFamily: 'var(--font-body)', fontSize: 17 }} />
               <button onClick={() => setSearchOpen(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-faint)', display: 'inline-flex' }}><Ic n="x" s={18} /></button>
             </div>
-            <div style={{ maxHeight: 360, overflowY: 'auto', padding: 8 }}>
+            <div className="ember-scroll" style={{ maxHeight: 360, overflowY: 'auto', padding: 8 }}>
               {results.length === 0 ? (
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'var(--text-faint)', textAlign: 'center', padding: '30px 0' }}>No products match &ldquo;{query}&rdquo;.</p>
               ) : results.map(p => (
@@ -105,7 +101,7 @@ function TopNav({ cartCount, onCartClick, onHome, onCategory, products = [], onO
                     <span style={{ display: 'block', fontFamily: 'var(--font-label)', fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>{p.brand}</span>
                     <span style={{ display: 'block', fontFamily: 'var(--font-display)', fontSize: 15, color: 'var(--text-strong)' }}>{p.name}</span>
                   </span>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 600, color: 'var(--gold-300)', flexShrink: 0 }}>${p.price.toFixed(2)}</span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 600, color: 'var(--gold-300)', flexShrink: 0 }}></span>
                 </button>
               ))}
             </div>

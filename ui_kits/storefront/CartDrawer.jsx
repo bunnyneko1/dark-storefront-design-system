@@ -55,7 +55,7 @@ function CartDrawer({ open, items, onClose, onQty, onRemove, onCheckout }) {
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 10 }}>
                   <QuantityStepper size="sm" value={i.qty} min={1} max={10} onChange={(q) => onQty(i.id, q)} />
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 15, fontWeight: 600, color: 'var(--gold-300)' }}>${(i.price * i.qty).toFixed(2)}</span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 15, fontWeight: 600, color: 'var(--gold-300)' }}></span>
                 </div>
               </div>
             </div>
@@ -66,9 +66,9 @@ function CartDrawer({ open, items, onClose, onQty, onRemove, onCheckout }) {
         <footer style={{ padding: '20px 24px', borderTop: '1px solid var(--line)', background: 'var(--surface-inset)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
             <span style={{ fontFamily: 'var(--font-label)', fontSize: 12, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>Subtotal</span>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 600, color: 'var(--text-strong)' }}>${subtotal.toFixed(2)}</span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 600, color: 'var(--text-strong)' }}></span>
           </div>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: 11.5, color: 'var(--text-faint)', margin: '0 0 16px' }}>{'{{CART_NOTE}}'}</p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 11.5, color: 'var(--text-faint)', margin: '0 0 16px' }}>Includes GST. Shipping &amp; ID check calculated at checkout.</p>
           <Button variant="primary" size="lg" fullWidth disabled={items.length === 0} onClick={onCheckout}>Proceed to checkout</Button>
         </footer>
       </aside>

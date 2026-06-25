@@ -1,21 +1,20 @@
 /* Footer — contact (WhatsApp + email) and working shop links. */
-function Footer({ onShop, whatsapp = '61400000000', email = '{{COMPANY_EMAIL}}' }) {
+function Footer({ onShop, whatsapp = '61400000000', email = 'hello@embertobacco.com.au' }) {
   const Ic = window.Icon;
   const waHref = 'https://wa.me/' + String(whatsapp).replace(/[^0-9]/g, '');
   const waDisplay = '+' + String(whatsapp).replace(/[^0-9]/g, '');
-  const shopLinks = [['All', 'all'], ['{{CATEGORY_1}}', 'cat-1'], ['{{CATEGORY_2}}', 'cat-2']];
+  const shopLinks = [['All', 'all'], ['Regular', 'regular'], ['Menthol', 'menthol']];
 
   return (
     <footer style={{ borderTop: '1px solid var(--line)', background: 'var(--bg-void)' }}>
       <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '48px var(--gutter)' }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 40, justifyContent: 'space-between' }}>
           <div style={{ maxWidth: 320 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-              <svg viewBox="0 0 64 64" width="26" height="26"><path d="M32 8 L52 32 L32 56 L12 32 Z" fill="none" stroke="#CDA85B" strokeWidth="2"/><circle cx="32" cy="32" r="5" fill="#A63B2B"/><circle cx="32" cy="32" r="2.2" fill="#E3C77E"/></svg>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 600, letterSpacing: '0.05em', color: 'var(--text-strong)' }}>{'{{COMPANY_NAME}}'}</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14, minHeight: 26 }}>
+              {/* logo icon + company name intentionally left blank */}
             </div>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
-              {'{{FOOTER_TAGLINE}}'}
+              The Manchester range — regular and menthol crush — shipped discreetly across Australia.
             </p>
             <div style={{ display: 'flex', gap: 16, marginTop: 18 }}>
               <a href={waHref} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style={{ color: 'var(--text-muted)', display: 'inline-flex' }}><Ic n="message-circle" s={18} /></a>
@@ -46,8 +45,8 @@ function Footer({ onShop, whatsapp = '61400000000', email = '{{COMPANY_EMAIL}}' 
           </div>
         </div>
         <div style={{ marginTop: 40, paddingTop: 20, borderTop: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-faint)' }}>© 2026 {'{{COMPANY_NAME}}'}</span>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-faint)' }}>{'{{FOOTER_NOTE}}'}</span>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-faint)' }}>© 2026</span>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-faint)' }}>Shipping Australia-wide</span>
         </div>
       </div>
     </footer>

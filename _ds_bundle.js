@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"EmberTobaccoCoDesignSystem_3a8c24","components":[{"name":"ProductCard","sourcePath":"components/commerce/ProductCard.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"QuantityStepper","sourcePath":"components/forms/QuantityStepper.jsx"}],"sourceHashes":{"components/commerce/ProductCard.jsx":"14740bef0845","components/core/Badge.jsx":"853af9deb0c3","components/core/Button.jsx":"00e90309c5d0","components/core/IconButton.jsx":"8e358c9bbbcf","components/core/Tag.jsx":"d28960e15907","components/forms/Input.jsx":"abad55a3d5e9","components/forms/QuantityStepper.jsx":"6141aaf4e0fa","ui_kits/storefront/App.jsx":"794d8f9fa405","ui_kits/storefront/CartDrawer.jsx":"6a44b506065a","ui_kits/storefront/Checkout.jsx":"ea7815ec2cd8","ui_kits/storefront/Confirmation.jsx":"62ef38692204","ui_kits/storefront/Footer.jsx":"d66a8b887f1c","ui_kits/storefront/ProductDetail.jsx":"a5c2f4c11f73","ui_kits/storefront/ProductGrid.jsx":"1f2d50ce1b33","ui_kits/storefront/Reveal.jsx":"b237afdffca2","ui_kits/storefront/Sections.jsx":"d62fdfba8887","ui_kits/storefront/Showcase.jsx":"49b2bb3bd724","ui_kits/storefront/TopNav.jsx":"ef71dc28053f","ui_kits/storefront/data.js":"b0a8635ed9fa","ui_kits/storefront/icons.js":"c7b5e7238447","ui_kits/storefront/image-slot.js":"9309434cb09c","ui_kits/storefront/payment.js":"ec597cff5869","ui_kits/storefront/useMedia.js":"773cb127b4af"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"EmberTobaccoCoDesignSystem_3a8c24","components":[{"name":"ProductCard","sourcePath":"components/commerce/ProductCard.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"QuantityStepper","sourcePath":"components/forms/QuantityStepper.jsx"}],"sourceHashes":{"components/commerce/ProductCard.jsx":"14740bef0845","components/core/Badge.jsx":"853af9deb0c3","components/core/Button.jsx":"00e90309c5d0","components/core/IconButton.jsx":"8e358c9bbbcf","components/core/Tag.jsx":"d28960e15907","components/forms/Input.jsx":"abad55a3d5e9","components/forms/QuantityStepper.jsx":"6141aaf4e0fa","ui_kits/admin/Activity.jsx":"65e72e2d4a44","ui_kits/admin/AdjustPanel.jsx":"f31caecdfa0a","ui_kits/admin/AdminApp.jsx":"18d6d3878df7","ui_kits/admin/Dashboard.jsx":"4d3844407b23","ui_kits/admin/Inventory.jsx":"438d9f687505","ui_kits/admin/Receive.jsx":"9251724173bd","ui_kits/admin/Sidebar.jsx":"3ae8ba4417bf","ui_kits/admin/Topbar.jsx":"90f695a8e017","ui_kits/admin/data.js":"e8368394a18b","ui_kits/admin/icons.js":"c7b5e7238447","ui_kits/admin/ui.jsx":"2cceef58bab9","ui_kits/storefront/App.jsx":"794d8f9fa405","ui_kits/storefront/CartDrawer.jsx":"6a44b506065a","ui_kits/storefront/Checkout.jsx":"ea7815ec2cd8","ui_kits/storefront/Confirmation.jsx":"62ef38692204","ui_kits/storefront/Footer.jsx":"d66a8b887f1c","ui_kits/storefront/ProductDetail.jsx":"a5c2f4c11f73","ui_kits/storefront/ProductGrid.jsx":"1f2d50ce1b33","ui_kits/storefront/Reveal.jsx":"b237afdffca2","ui_kits/storefront/Sections.jsx":"d62fdfba8887","ui_kits/storefront/Showcase.jsx":"49b2bb3bd724","ui_kits/storefront/TopNav.jsx":"b3158c0ef052","ui_kits/storefront/data.js":"b0a8635ed9fa","ui_kits/storefront/icons.js":"c7b5e7238447","ui_kits/storefront/image-slot.js":"9309434cb09c","ui_kits/storefront/payment.js":"ec597cff5869","ui_kits/storefront/useMedia.js":"773cb127b4af"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -83,7 +83,7 @@ Object.assign(__ds_scope, { Badge });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /**
- * Primary action. Brass-filled by default; ember + ghost + outline variants.
+ * Ember primary action. Brass-filled by default; ember + ghost + outline variants.
  */
 function Button({
   children,
@@ -208,7 +208,7 @@ Object.assign(__ds_scope, { Button });
 // components/commerce/ProductCard.jsx
 try { (() => {
 /**
- * Storefront product tile.
+ * Storefront product tile for cigarettes / cigars / accessories.
  * Renders a CSS "pack" placeholder unless an `image` URL is supplied.
  */
 function ProductCard({
@@ -778,6 +778,2456 @@ function QuantityStepper({
 Object.assign(__ds_scope, { QuantityStepper });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/forms/QuantityStepper.jsx", error: String((e && e.message) || e) }); }
 
+// ui_kits/admin/Activity.jsx
+try { (() => {
+/* Activity — full chronological log of every stock movement. */
+function Activity({
+  activity,
+  inventory
+}) {
+  const Ic = window.Icon;
+  const {
+    Tag
+  } = window.EmberTobaccoCoDesignSystem_3a8c24;
+  const {
+    timeAgo
+  } = window.AdminUI;
+  const [filter, setFilter] = React.useState('all');
+  const byId = id => inventory.find(p => p.id === id) || {
+    name: id,
+    brand: '',
+    sku: id
+  };
+  const TYPE = {
+    receive: {
+      label: 'Received',
+      icon: 'truck',
+      color: 'var(--gold-400)'
+    },
+    sale: {
+      label: 'Sale',
+      icon: 'shopping-cart',
+      color: 'var(--text-faint)'
+    },
+    adjust: {
+      label: 'Adjusted',
+      icon: 'settings-2',
+      color: 'var(--ember-300)'
+    },
+    count: {
+      label: 'Recount',
+      icon: 'clipboard-check',
+      color: 'var(--blue-400)'
+    }
+  };
+  const filters = [['all', 'All'], ['receive', 'Received'], ['adjust', 'Adjusted'], ['count', 'Recounts'], ['sale', 'Sales']];
+  const rows = activity.filter(a => filter === 'all' || a.type === filter);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fade-in",
+    style: {
+      padding: '24px 32px 48px',
+      maxWidth: 820
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8,
+      marginBottom: 18,
+      flexWrap: 'wrap'
+    }
+  }, filters.map(([id, lbl]) => /*#__PURE__*/React.createElement(Tag, {
+    key: id,
+    selectable: true,
+    selected: filter === id,
+    onClick: () => setFilter(id)
+  }, lbl))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'var(--surface-card)',
+      border: '1px solid var(--line)',
+      borderRadius: 'var(--radius-lg)',
+      overflow: 'hidden'
+    }
+  }, rows.map((a, i) => {
+    const p = byId(a.product);
+    const t = TYPE[a.type] || TYPE.adjust;
+    const up = a.delta > 0;
+    return /*#__PURE__*/React.createElement("div", {
+      key: a.id,
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16,
+        padding: '14px 20px',
+        borderTop: i ? '1px solid var(--line)' : 'none'
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: 36,
+        height: 36,
+        flex: 'none',
+        borderRadius: 999,
+        background: 'var(--surface-raised)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: t.color
+      }
+    }, /*#__PURE__*/React.createElement(Ic, {
+      n: t.icon,
+      s: 17
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: 1,
+        minWidth: 0
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 14,
+        color: 'var(--text-body)'
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontWeight: 600,
+        color: 'var(--text-strong)'
+      }
+    }, p.brand, " ", p.name), /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: 'var(--text-muted)'
+      }
+    }, " \xB7 ", t.label.toLowerCase())), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 12,
+        color: 'var(--text-faint)',
+        marginTop: 2
+      }
+    }, a.who, " \xB7 ", a.note)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        textAlign: 'right'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: 'var(--font-mono)',
+        fontSize: 15,
+        fontWeight: 600,
+        color: up ? 'var(--in-stock)' : 'var(--text-muted)'
+      }
+    }, up ? '+' : '', a.delta), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 11.5,
+        color: 'var(--text-faint)'
+      }
+    }, timeAgo(a.mins))));
+  }), rows.length === 0 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '40px 0',
+      textAlign: 'center',
+      color: 'var(--text-muted)'
+    }
+  }, "No activity of this type yet.")));
+}
+window.Activity = Activity;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/admin/Activity.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/admin/AdjustPanel.jsx
+try { (() => {
+/* AdjustPanel — slide-over to receive, remove, or recount a single product. */
+function AdjustPanel({
+  product,
+  onClose,
+  onApply
+}) {
+  const Ic = window.Icon;
+  const {
+    Button,
+    Badge
+  } = window.EmberTobaccoCoDesignSystem_3a8c24;
+  const {
+    Thumb,
+    STATUS
+  } = window.AdminUI;
+  const [mode, setMode] = React.useState('receive'); // receive | remove | set
+  const [qty, setQty] = React.useState(48);
+  const [reason, setReason] = React.useState('Damaged');
+  React.useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+  React.useEffect(() => {
+    setQty(mode === 'set' ? product.stock : mode === 'remove' ? 6 : 48);
+  }, [mode]);
+  if (!product) return null;
+  const cur = product.stock;
+  const next = mode === 'receive' ? cur + qty : mode === 'remove' ? Math.max(0, cur - qty) : qty;
+  const delta = next - cur;
+  const nextStatus = next <= 0 ? 'out' : next <= product.reorder ? 'low' : 'ok';
+  const modes = [{
+    id: 'receive',
+    label: 'Receive',
+    icon: 'package-plus'
+  }, {
+    id: 'remove',
+    label: 'Remove',
+    icon: 'package-minus'
+  }, {
+    id: 'set',
+    label: 'Set count',
+    icon: 'clipboard-check'
+  }];
+  const chips = mode === 'receive' ? [24, 48, 120, 240] : mode === 'remove' ? [1, 3, 6, 12] : [product.reorder, product.reorder * 2];
+  const reasons = mode === 'remove' ? ['Damaged', 'Expired', 'Theft / loss', 'Sample / staff', 'Other'] : ['Cycle count correction', 'Found stock', 'System error', 'Other'];
+  const labelCss = {
+    fontFamily: 'var(--font-label)',
+    fontSize: 10.5,
+    fontWeight: 600,
+    letterSpacing: '0.14em',
+    textTransform: 'uppercase',
+    color: 'var(--text-muted)'
+  };
+  const showReason = mode !== 'receive';
+  const apply = () => {
+    if (delta === 0) {
+      onClose();
+      return;
+    }
+    const note = mode === 'receive' ? 'Shipment received' : reason;
+    onApply(product, mode, delta, note);
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'fixed',
+      inset: 0,
+      zIndex: 80
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "fade-in",
+    onClick: onClose,
+    style: {
+      position: 'absolute',
+      inset: 0,
+      background: 'var(--surface-overlay)',
+      backdropFilter: 'blur(4px)'
+    }
+  }), /*#__PURE__*/React.createElement("aside", {
+    className: "panel-in",
+    style: {
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      height: '100%',
+      width: 'min(440px, 94vw)',
+      background: 'var(--surface-card)',
+      borderLeft: '1px solid var(--line-gold)',
+      boxShadow: 'var(--shadow-overlay)',
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 14,
+      padding: '20px 22px',
+      borderBottom: '1px solid var(--line)'
+    }
+  }, /*#__PURE__*/React.createElement(Thumb, {
+    p: product,
+    size: 44
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: 'var(--font-display)',
+      fontSize: 18,
+      fontWeight: 600,
+      color: 'var(--text-strong)'
+    }
+  }, product.brand, " ", product.name), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: 'var(--font-mono)',
+      fontSize: 11.5,
+      color: 'var(--text-faint)'
+    }
+  }, product.sku)), /*#__PURE__*/React.createElement("button", {
+    onClick: onClose,
+    style: {
+      background: 'none',
+      border: 'none',
+      cursor: 'pointer',
+      color: 'var(--text-faint)',
+      display: 'inline-flex',
+      padding: 4
+    }
+  }, /*#__PURE__*/React.createElement(Ic, {
+    n: "x",
+    s: 20
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "ember-scroll",
+    style: {
+      flex: 1,
+      overflowY: 'auto',
+      padding: 22,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 22
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: '14px 16px',
+      background: 'var(--surface-inset)',
+      borderRadius: 'var(--radius-md)',
+      border: '1px solid var(--line)'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: labelCss
+  }, "On hand now"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-mono)',
+      fontSize: 20,
+      fontWeight: 600,
+      color: STATUS[window.stockStatus(product)].color
+    }
+  }, cur), /*#__PURE__*/React.createElement(Badge, {
+    tone: STATUS[window.stockStatus(product)].tone
+  }, STATUS[window.stockStatus(product)].label))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...labelCss,
+      marginBottom: 8
+    }
+  }, "Action"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3,1fr)',
+      gap: 6,
+      padding: 4,
+      background: 'var(--surface-inset)',
+      borderRadius: 'var(--radius-md)',
+      border: '1px solid var(--line)'
+    }
+  }, modes.map(m => /*#__PURE__*/React.createElement("button", {
+    key: m.id,
+    onClick: () => setMode(m.id),
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 5,
+      padding: '10px 4px',
+      borderRadius: 'var(--radius-sm)',
+      border: 'none',
+      cursor: 'pointer',
+      background: mode === m.id ? 'var(--accent-soft)' : 'transparent',
+      color: mode === m.id ? 'var(--gold-200)' : 'var(--text-muted)',
+      boxShadow: mode === m.id ? 'inset 0 0 0 1px var(--line-gold)' : 'none'
+    }
+  }, /*#__PURE__*/React.createElement(Ic, {
+    n: m.icon,
+    s: 18
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 12.5,
+      fontWeight: 600
+    }
+  }, m.label))))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...labelCss,
+      marginBottom: 8
+    }
+  }, mode === 'set' ? 'New counted total' : mode === 'remove' ? 'Packs to remove' : 'Packs received'), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => setQty(q => Math.max(0, q - 1)),
+    style: {
+      width: 44,
+      height: 44,
+      flex: 'none',
+      borderRadius: 'var(--radius-md)',
+      border: '1px solid var(--border)',
+      background: 'var(--surface-inset)',
+      color: 'var(--text-body)',
+      cursor: 'pointer',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(Ic, {
+    n: "minus",
+    s: 18
+  })), /*#__PURE__*/React.createElement("input", {
+    type: "number",
+    value: qty,
+    min: 0,
+    onChange: e => setQty(Math.max(0, parseInt(e.target.value || '0', 10))),
+    style: {
+      flex: 1,
+      height: 44,
+      textAlign: 'center',
+      background: 'var(--surface-inset)',
+      border: '1px solid var(--border)',
+      borderRadius: 'var(--radius-md)',
+      color: 'var(--text-strong)',
+      fontFamily: 'var(--font-mono)',
+      fontSize: 20,
+      fontWeight: 600,
+      outline: 'none'
+    }
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setQty(q => q + 1),
+    style: {
+      width: 44,
+      height: 44,
+      flex: 'none',
+      borderRadius: 'var(--radius-md)',
+      border: '1px solid var(--border)',
+      background: 'var(--surface-inset)',
+      color: 'var(--text-body)',
+      cursor: 'pointer',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(Ic, {
+    n: "plus",
+    s: 18
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 6,
+      marginTop: 10,
+      flexWrap: 'wrap'
+    }
+  }, chips.map(c => /*#__PURE__*/React.createElement("button", {
+    key: c,
+    onClick: () => setQty(c),
+    style: {
+      padding: '6px 12px',
+      borderRadius: 'var(--radius-pill)',
+      border: '1px solid var(--border)',
+      background: 'transparent',
+      color: 'var(--text-muted)',
+      cursor: 'pointer',
+      fontFamily: 'var(--font-mono)',
+      fontSize: 12.5
+    },
+    onMouseEnter: e => {
+      e.currentTarget.style.borderColor = 'var(--line-gold)';
+      e.currentTarget.style.color = 'var(--gold-300)';
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.borderColor = 'var(--border)';
+      e.currentTarget.style.color = 'var(--text-muted)';
+    }
+  }, mode === 'set' ? '' : mode === 'remove' ? '−' : '+', c)))), showReason && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...labelCss,
+      marginBottom: 8
+    }
+  }, "Reason"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: 6
+    }
+  }, reasons.map(r => /*#__PURE__*/React.createElement("button", {
+    key: r,
+    onClick: () => setReason(r),
+    style: {
+      padding: '8px 13px',
+      borderRadius: 'var(--radius-pill)',
+      border: '1px solid ' + (reason === r ? 'var(--line-gold)' : 'var(--border)'),
+      background: reason === r ? 'var(--accent-soft)' : 'transparent',
+      color: reason === r ? 'var(--gold-200)' : 'var(--text-muted)',
+      cursor: 'pointer',
+      fontSize: 13
+    }
+  }, r))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: 22,
+      borderTop: '1px solid var(--line)',
+      background: 'var(--ink-850)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: 16
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: labelCss
+  }, "New on-hand"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-mono)',
+      fontSize: 15,
+      color: 'var(--text-faint)'
+    }
+  }, cur), /*#__PURE__*/React.createElement(Ic, {
+    n: "arrow-right",
+    s: 15,
+    color: "var(--text-faint)"
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-mono)',
+      fontSize: 24,
+      fontWeight: 700,
+      color: STATUS[nextStatus].color
+    }
+  }, next), delta !== 0 && /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-mono)',
+      fontSize: 13,
+      fontWeight: 600,
+      color: delta > 0 ? 'var(--in-stock)' : 'var(--ember-300)'
+    }
+  }, "(", delta > 0 ? '+' : '', delta, ")"))), /*#__PURE__*/React.createElement(Button, {
+    variant: mode === 'remove' ? 'ember' : 'primary',
+    fullWidth: true,
+    disabled: delta === 0,
+    iconLeft: /*#__PURE__*/React.createElement(Ic, {
+      n: mode === 'receive' ? 'package-plus' : mode === 'remove' ? 'package-minus' : 'check',
+      s: 17
+    }),
+    onClick: apply
+  }, mode === 'receive' ? 'Receive ' + qty + ' packs' : mode === 'remove' ? 'Remove ' + qty + ' packs' : 'Set count to ' + qty))));
+}
+window.AdjustPanel = AdjustPanel;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/admin/AdjustPanel.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/admin/AdminApp.jsx
+try { (() => {
+/* App — back-office shell: state, routing, stock mutations, activity log. */
+function AdminApp() {
+  const [view, setView] = React.useState('dashboard');
+  const [query, setQuery] = React.useState('');
+  const [inventory, setInventory] = React.useState(() => window.EMBER_INVENTORY.map(p => ({
+    ...p
+  })));
+  const [activity, setActivity] = React.useState(() => window.EMBER_ACTIVITY.map(a => ({
+    ...a
+  })));
+  const [shipments] = React.useState(() => window.EMBER_SHIPMENTS.map(s => ({
+    ...s
+  })));
+  const [doneIds, setDoneIds] = React.useState([]);
+  const [target, setTarget] = React.useState(null); // product in AdjustPanel
+  const [flashId, setFlashId] = React.useState(null);
+  const [toast, setToast] = React.useState(null);
+  const Ic = window.Icon;
+  const staff = window.EMBER_STAFF;
+  const flash = id => {
+    setFlashId(id);
+    setTimeout(() => setFlashId(c => c === id ? null : c), 1000);
+  };
+  const notify = msg => {
+    setToast(msg);
+    clearTimeout(window.__t);
+    window.__t = setTimeout(() => setToast(null), 2600);
+  };
+  const logIds = React.useRef(1000);
+  const applyDelta = (id, delta) => setInventory(inv => inv.map(p => p.id === id ? {
+    ...p,
+    stock: Math.max(0, p.stock + delta)
+  } : p));
+  const addLog = entries => setActivity(a => [...entries.map(e => ({
+    id: 'n' + ++logIds.current,
+    mins: 0,
+    who: staff.name,
+    ...e
+  })), ...a]);
+
+  // Quick inline ±1 from the table
+  const onAdjust = (p, delta, note) => {
+    if (delta < 0 && p.stock <= 0) return;
+    applyDelta(p.id, delta);
+    addLog([{
+      type: delta > 0 ? 'count' : 'adjust',
+      product: p.id,
+      delta,
+      note
+    }]);
+    flash(p.id);
+  };
+
+  // From the slide-over panel
+  const onApply = (p, mode, delta, note) => {
+    applyDelta(p.id, delta);
+    addLog([{
+      type: mode === 'receive' ? 'receive' : mode === 'set' ? 'count' : 'adjust',
+      product: p.id,
+      delta,
+      note
+    }]);
+    setTarget(null);
+    flash(p.id);
+    notify((delta > 0 ? '+' : '') + delta + ' · ' + p.brand + ' ' + p.name + ' now ' + Math.max(0, p.stock + delta) + ' packs');
+  };
+
+  // Receive a whole PO
+  const onReceivePO = (s, lineCounts) => {
+    const entries = [];
+    let total = 0;
+    s.lines.forEach(l => {
+      const qty = lineCounts[l.id] ?? l.qty;
+      if (qty > 0) {
+        applyDelta(l.id, qty);
+        entries.push({
+          type: 'receive',
+          product: l.id,
+          delta: qty,
+          note: s.id
+        });
+        total += qty;
+      }
+    });
+    if (entries.length) addLog(entries);
+    setDoneIds(d => [...d, s.id]);
+    notify('Received ' + s.id + ' · +' + total + ' packs checked in');
+  };
+  const lowCount = inventory.filter(p => window.stockStatus(p) !== 'ok').length;
+  const arrivedCount = shipments.filter(s => s.status === 'arrived' && !doneIds.includes(s.id)).length;
+  const meta = {
+    dashboard: {
+      title: 'Dashboard',
+      subtitle: 'Good morning, ' + staff.name.split(' ')[0] + ' — here\u2019s where stock stands today.',
+      search: false
+    },
+    inventory: {
+      title: 'Inventory',
+      subtitle: 'Live pack counts across every SKU. Adjust inline or open a product to restock.',
+      search: true
+    },
+    receive: {
+      title: 'Receive shipments',
+      subtitle: 'Check in arriving purchase orders to update stock in bulk.',
+      search: false
+    },
+    activity: {
+      title: 'Activity log',
+      subtitle: 'Every stock movement, newest first.',
+      search: false
+    }
+  }[view];
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      minHeight: '100vh',
+      background: 'var(--bg-page)'
+    }
+  }, /*#__PURE__*/React.createElement(Sidebar, {
+    view: view,
+    onNav: setView,
+    lowCount: lowCount,
+    arrivedCount: arrivedCount
+  }), /*#__PURE__*/React.createElement("main", {
+    className: "ember-scroll",
+    style: {
+      flex: 1,
+      minWidth: 0,
+      height: '100vh',
+      overflowY: 'auto'
+    }
+  }, /*#__PURE__*/React.createElement(Topbar, {
+    title: meta.title,
+    subtitle: meta.subtitle,
+    query: meta.search ? query : null,
+    onQuery: meta.search ? setQuery : null
+  }), view === 'dashboard' && /*#__PURE__*/React.createElement(Dashboard, {
+    inventory: inventory,
+    activity: activity,
+    shipments: shipments.filter(s => !doneIds.includes(s.id)),
+    onRestock: setTarget,
+    onNav: setView
+  }), view === 'inventory' && /*#__PURE__*/React.createElement(Inventory, {
+    inventory: inventory,
+    query: query,
+    onRestock: setTarget,
+    onAdjust: onAdjust,
+    flashId: flashId
+  }), view === 'receive' && /*#__PURE__*/React.createElement(Receive, {
+    shipments: shipments,
+    inventory: inventory,
+    doneIds: doneIds,
+    onReceivePO: onReceivePO
+  }), view === 'activity' && /*#__PURE__*/React.createElement(Activity, {
+    activity: activity,
+    inventory: inventory
+  })), target && /*#__PURE__*/React.createElement(AdjustPanel, {
+    product: inventory.find(p => p.id === target.id) || target,
+    onClose: () => setTarget(null),
+    onApply: onApply
+  }), toast && /*#__PURE__*/React.createElement("div", {
+    className: "fade-in",
+    style: {
+      position: 'fixed',
+      bottom: 26,
+      left: '50%',
+      transform: 'translateX(-50%)',
+      zIndex: 95,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      padding: '13px 20px',
+      background: 'var(--surface-raised)',
+      border: '1px solid var(--line-gold)',
+      borderRadius: 'var(--radius-pill)',
+      boxShadow: 'var(--shadow-lg)',
+      fontSize: 13.5,
+      color: 'var(--text-body)'
+    }
+  }, /*#__PURE__*/React.createElement(Ic, {
+    n: "check-circle",
+    s: 17,
+    color: "var(--gold-300)"
+  }), " ", toast));
+}
+window.AdminApp = AdminApp;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/admin/AdminApp.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/admin/Dashboard.jsx
+try { (() => {
+/* Dashboard — at-a-glance overview for staff starting a shift. */
+function Dashboard({
+  inventory,
+  activity,
+  shipments,
+  onRestock,
+  onNav
+}) {
+  const Ic = window.Icon;
+  const {
+    Button,
+    Badge
+  } = window.EmberTobaccoCoDesignSystem_3a8c24;
+  const {
+    timeAgo,
+    Thumb,
+    StockBar,
+    STATUS
+  } = window.AdminUI;
+  const low = inventory.filter(p => window.stockStatus(p) === 'low');
+  const out = inventory.filter(p => window.stockStatus(p) === 'out');
+  const needs = inventory.filter(p => window.stockStatus(p) !== 'ok').sort((a, b) => a.stock - b.stock);
+  const totalUnits = inventory.reduce((s, p) => s + p.stock, 0);
+  const arrived = shipments.filter(s => s.status === 'arrived');
+  const incomingUnits = shipments.reduce((s, sh) => s + sh.lines.reduce((t, l) => t + l.qty, 0), 0);
+  const stats = [{
+    label: 'Active SKUs',
+    value: inventory.length,
+    icon: 'package',
+    sub: totalUnits.toLocaleString() + ' packs on hand'
+  }, {
+    label: 'Low stock',
+    value: low.length,
+    icon: 'trending-down',
+    tone: 'low',
+    sub: 'at or below reorder point'
+  }, {
+    label: 'Out of stock',
+    value: out.length,
+    icon: 'circle-alert',
+    tone: 'out',
+    sub: 'needs restock now'
+  }, {
+    label: 'Incoming',
+    value: incomingUnits.toLocaleString(),
+    icon: 'truck',
+    tone: 'gold',
+    sub: shipments.length + ' open purchase orders'
+  }];
+  const labelCss = {
+    fontFamily: 'var(--font-label)',
+    fontSize: 11,
+    fontWeight: 600,
+    letterSpacing: '0.14em',
+    textTransform: 'uppercase',
+    color: 'var(--text-muted)'
+  };
+  const card = {
+    background: 'var(--surface-card)',
+    border: '1px solid var(--line)',
+    borderRadius: 'var(--radius-lg)'
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fade-in",
+    style: {
+      padding: '28px 32px 48px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 24
+    }
+  }, arrived.length > 0 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 16,
+      padding: '16px 20px',
+      borderRadius: 'var(--radius-lg)',
+      background: 'linear-gradient(100deg, rgba(205,168,91,0.14), rgba(140,47,34,0.10))',
+      border: '1px solid var(--line-gold)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 42,
+      height: 42,
+      flex: 'none',
+      borderRadius: 'var(--radius-md)',
+      background: 'var(--accent-soft)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: 'var(--gold-300)'
+    }
+  }, /*#__PURE__*/React.createElement(Ic, {
+    n: "truck",
+    s: 22
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 15,
+      fontWeight: 600,
+      color: 'var(--text-strong)'
+    }
+  }, arrived.length, " shipment", arrived.length > 1 ? 's' : '', " arrived and ready to receive"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: 'var(--text-muted)'
+    }
+  }, arrived.map(s => s.id).join(', '), " \u2014 check in stock to update counts.")), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    size: "sm",
+    iconRight: /*#__PURE__*/React.createElement(Ic, {
+      n: "arrow-right",
+      s: 15
+    }),
+    onClick: () => onNav('receive')
+  }, "Receive now")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4, 1fr)',
+      gap: 16
+    }
+  }, stats.map(s => /*#__PURE__*/React.createElement("div", {
+    key: s.label,
+    style: {
+      ...card,
+      padding: '18px 20px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'flex-start'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: labelCss
+  }, s.label), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: s.tone === 'low' ? 'var(--low-stock)' : s.tone === 'out' ? 'var(--out-of-stock)' : s.tone === 'gold' ? 'var(--gold-400)' : 'var(--text-faint)'
+    }
+  }, /*#__PURE__*/React.createElement(Ic, {
+    n: s.icon,
+    s: 18
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: 'var(--font-display)',
+      fontSize: 40,
+      fontWeight: 600,
+      lineHeight: 1.1,
+      marginTop: 10,
+      color: s.tone === 'out' && s.value > 0 ? 'var(--out-of-stock)' : 'var(--text-strong)'
+    }
+  }, s.value), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12.5,
+      color: 'var(--text-muted)',
+      marginTop: 4
+    }
+  }, s.sub)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1.55fr 1fr',
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...card,
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: '16px 20px',
+      borderBottom: '1px solid var(--line)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-display)',
+      fontSize: 18,
+      fontWeight: 600,
+      color: 'var(--text-strong)'
+    }
+  }, "Needs restock"), /*#__PURE__*/React.createElement(Badge, {
+    tone: "low"
+  }, needs.length)), /*#__PURE__*/React.createElement("button", {
+    onClick: () => onNav('inventory'),
+    style: {
+      background: 'none',
+      border: 'none',
+      cursor: 'pointer',
+      color: 'var(--gold-400)',
+      fontSize: 13,
+      fontWeight: 600,
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 4
+    }
+  }, "All inventory ", /*#__PURE__*/React.createElement(Ic, {
+    n: "chevron-right",
+    s: 15
+  }))), /*#__PURE__*/React.createElement("div", null, needs.length === 0 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '40px 20px',
+      textAlign: 'center',
+      color: 'var(--text-muted)',
+      fontSize: 14
+    }
+  }, "Everything is above its reorder point. \uD83C\uDF89"), needs.map((p, i) => {
+    const st = window.stockStatus(p);
+    return /*#__PURE__*/React.createElement("div", {
+      key: p.id,
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 14,
+        padding: '12px 20px',
+        borderTop: i ? '1px solid var(--line)' : 'none'
+      }
+    }, /*#__PURE__*/React.createElement(Thumb, {
+      p: p,
+      size: 34
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: 1,
+        minWidth: 0
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 14.5,
+        fontWeight: 600,
+        color: 'var(--text-strong)'
+      }
+    }, p.brand, " ", p.name), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: 'var(--font-mono)',
+        fontSize: 11.5,
+        color: 'var(--text-faint)'
+      }
+    }, p.sku)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: 120
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        fontSize: 12,
+        marginBottom: 5
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: 'var(--font-mono)',
+        fontWeight: 600,
+        color: STATUS[st].color
+      }
+    }, p.stock), /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: 'var(--text-faint)'
+      }
+    }, "/ ", p.reorder)), /*#__PURE__*/React.createElement(StockBar, {
+      stock: p.stock,
+      reorder: p.reorder
+    })), /*#__PURE__*/React.createElement(Button, {
+      variant: "outline",
+      size: "sm",
+      onClick: () => onRestock(p)
+    }, "Restock"));
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...card,
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: '16px 20px',
+      borderBottom: '1px solid var(--line)'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-display)',
+      fontSize: 18,
+      fontWeight: 600,
+      color: 'var(--text-strong)'
+    }
+  }, "Recent activity"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => onNav('activity'),
+    style: {
+      background: 'none',
+      border: 'none',
+      cursor: 'pointer',
+      color: 'var(--gold-400)',
+      fontSize: 13,
+      fontWeight: 600,
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 4
+    }
+  }, "View all ", /*#__PURE__*/React.createElement(Ic, {
+    n: "chevron-right",
+    s: 15
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '4px 0'
+    }
+  }, activity.slice(0, 6).map((a, i) => {
+    const p = inventory.find(x => x.id === a.product) || {
+      name: a.product,
+      brand: ''
+    };
+    const up = a.delta > 0;
+    const meta = {
+      receive: ['truck', 'var(--gold-400)'],
+      sale: ['shopping-cart', 'var(--text-faint)'],
+      adjust: ['settings-2', 'var(--ember-300)'],
+      count: ['clipboard-check', 'var(--blue-400)']
+    }[a.type] || ['dot', 'var(--text-faint)'];
+    return /*#__PURE__*/React.createElement("div", {
+      key: a.id,
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 12,
+        padding: '10px 20px'
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: 30,
+        height: 30,
+        flex: 'none',
+        borderRadius: 999,
+        background: 'var(--surface-raised)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: meta[1]
+      }
+    }, /*#__PURE__*/React.createElement(Ic, {
+      n: meta[0],
+      s: 15
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: 1,
+        minWidth: 0
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 13.5,
+        color: 'var(--text-body)'
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: 'var(--text-strong)',
+        fontWeight: 600
+      }
+    }, p.brand, " ", p.name)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 11.5,
+        color: 'var(--text-faint)'
+      }
+    }, a.who.split(' ')[0], " \xB7 ", timeAgo(a.mins))), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: 'var(--font-mono)',
+        fontSize: 13.5,
+        fontWeight: 600,
+        color: up ? 'var(--in-stock)' : 'var(--text-muted)'
+      }
+    }, up ? '+' : '', a.delta));
+  })))));
+}
+window.Dashboard = Dashboard;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/admin/Dashboard.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/admin/Inventory.jsx
+try { (() => {
+/* Inventory — full sortable/filterable stock table with inline quick-adjust. */
+function Inventory({
+  inventory,
+  query,
+  onRestock,
+  onAdjust,
+  flashId
+}) {
+  const Ic = window.Icon;
+  const {
+    Tag,
+    Badge
+  } = window.EmberTobaccoCoDesignSystem_3a8c24;
+  const {
+    Thumb,
+    StockBar,
+    STATUS
+  } = window.AdminUI;
+  const [filter, setFilter] = React.useState('all');
+  const [sort, setSort] = React.useState({
+    key: 'status',
+    dir: 1
+  });
+  const filters = [{
+    id: 'all',
+    label: 'All'
+  }, {
+    id: 'needs',
+    label: 'Needs restock'
+  }, {
+    id: 'Regular',
+    label: 'Regular'
+  }, {
+    id: 'Menthol',
+    label: 'Menthol'
+  }];
+  const q = query.trim().toLowerCase();
+  let rows = inventory.filter(p => {
+    if (q && !(p.brand + ' ' + p.name + ' ' + p.sku).toLowerCase().includes(q)) return false;
+    if (filter === 'needs') return window.stockStatus(p) !== 'ok';
+    if (filter === 'Regular' || filter === 'Menthol') return p.cat === filter;
+    return true;
+  });
+  const rank = {
+    out: 0,
+    low: 1,
+    ok: 2
+  };
+  rows = [...rows].sort((a, b) => {
+    let av, bv;
+    if (sort.key === 'status') {
+      av = rank[window.stockStatus(a)];
+      bv = rank[window.stockStatus(b)];
+    } else if (sort.key === 'name') {
+      av = (a.brand + a.name).toLowerCase();
+      bv = (b.brand + b.name).toLowerCase();
+    } else {
+      av = a[sort.key];
+      bv = b[sort.key];
+    }
+    if (av < bv) return -sort.dir;
+    if (av > bv) return sort.dir;
+    return 0;
+  });
+  const setSorting = key => setSort(s => s.key === key ? {
+    key,
+    dir: -s.dir
+  } : {
+    key,
+    dir: 1
+  });
+  const th = {
+    padding: '12px 16px',
+    fontFamily: 'var(--font-label)',
+    fontSize: 10.5,
+    fontWeight: 600,
+    letterSpacing: '0.12em',
+    textTransform: 'uppercase',
+    color: 'var(--text-muted)',
+    textAlign: 'left',
+    whiteSpace: 'nowrap',
+    userSelect: 'none'
+  };
+  const td = {
+    padding: '12px 16px',
+    borderTop: '1px solid var(--line)',
+    verticalAlign: 'middle'
+  };
+  const SortTh = ({
+    k,
+    children,
+    align
+  }) => /*#__PURE__*/React.createElement("th", {
+    style: {
+      ...th,
+      textAlign: align || 'left',
+      cursor: 'pointer'
+    },
+    onClick: () => setSorting(k)
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 4
+    }
+  }, children, sort.key === k && /*#__PURE__*/React.createElement(Ic, {
+    n: sort.dir === 1 ? 'chevron-up' : 'chevron-down',
+    s: 13
+  })));
+
+  // compact inline ±1 stepper
+  const Step = ({
+    p,
+    dir
+  }) => /*#__PURE__*/React.createElement("button", {
+    onClick: () => onAdjust(p, dir, dir > 0 ? 'Quick add' : 'Quick remove'),
+    disabled: dir < 0 && p.stock <= 0,
+    style: {
+      width: 28,
+      height: 28,
+      flex: 'none',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 'var(--radius-sm)',
+      border: '1px solid var(--border)',
+      background: 'var(--surface-inset)',
+      color: dir < 0 && p.stock <= 0 ? 'var(--text-faint)' : 'var(--text-body)',
+      cursor: dir < 0 && p.stock <= 0 ? 'not-allowed' : 'pointer'
+    },
+    onMouseEnter: e => {
+      if (!(dir < 0 && p.stock <= 0)) {
+        e.currentTarget.style.borderColor = 'var(--line-gold)';
+        e.currentTarget.style.color = 'var(--gold-300)';
+      }
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.borderColor = 'var(--border)';
+      e.currentTarget.style.color = dir < 0 && p.stock <= 0 ? 'var(--text-faint)' : 'var(--text-body)';
+    }
+  }, /*#__PURE__*/React.createElement(Ic, {
+    n: dir > 0 ? 'plus' : 'minus',
+    s: 14
+  }));
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fade-in",
+    style: {
+      padding: '24px 32px 48px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8,
+      marginBottom: 18,
+      flexWrap: 'wrap'
+    }
+  }, filters.map(f => /*#__PURE__*/React.createElement(Tag, {
+    key: f.id,
+    selectable: true,
+    selected: filter === f.id,
+    onClick: () => setFilter(f.id)
+  }, f.label)), /*#__PURE__*/React.createElement("span", {
+    style: {
+      marginLeft: 'auto',
+      alignSelf: 'center',
+      fontSize: 13,
+      color: 'var(--text-muted)'
+    }
+  }, rows.length, " of ", inventory.length, " products")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'var(--surface-card)',
+      border: '1px solid var(--line)',
+      borderRadius: 'var(--radius-lg)',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("table", {
+    style: {
+      width: '100%',
+      borderCollapse: 'collapse'
+    }
+  }, /*#__PURE__*/React.createElement("thead", {
+    style: {
+      background: 'var(--surface-inset)'
+    }
+  }, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement(SortTh, {
+    k: "name"
+  }, "Product"), /*#__PURE__*/React.createElement("th", {
+    style: th
+  }, "Category"), /*#__PURE__*/React.createElement(SortTh, {
+    k: "stock"
+  }, "Stock level"), /*#__PURE__*/React.createElement("th", {
+    style: {
+      ...th,
+      textAlign: 'right'
+    }
+  }, "Reorder at"), /*#__PURE__*/React.createElement(SortTh, {
+    k: "status"
+  }, "Status"), /*#__PURE__*/React.createElement("th", {
+    style: {
+      ...th,
+      textAlign: 'center'
+    }
+  }, "Quick adjust"), /*#__PURE__*/React.createElement("th", {
+    style: {
+      ...th,
+      textAlign: 'right'
+    }
+  }, "Restock"))), /*#__PURE__*/React.createElement("tbody", null, rows.map(p => {
+    const st = window.stockStatus(p);
+    return /*#__PURE__*/React.createElement("tr", {
+      key: p.id,
+      className: 'inv-row' + (flashId === p.id ? ' row-flash' : '')
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        ...td,
+        cursor: 'pointer'
+      },
+      onClick: () => onRestock(p)
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 14
+      }
+    }, /*#__PURE__*/React.createElement(Thumb, {
+      p: p,
+      size: 36
+    }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 14.5,
+        fontWeight: 600,
+        color: 'var(--text-strong)'
+      }
+    }, p.brand, " ", p.name), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: 'var(--font-mono)',
+        fontSize: 11.5,
+        color: 'var(--text-faint)'
+      }
+    }, p.sku)))), /*#__PURE__*/React.createElement("td", {
+      style: {
+        ...td,
+        fontSize: 13.5,
+        color: 'var(--text-muted)'
+      }
+    }, p.cat), /*#__PURE__*/React.createElement("td", {
+      style: {
+        ...td,
+        width: 200
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'baseline',
+        gap: 6,
+        marginBottom: 6
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: 'var(--font-mono)',
+        fontSize: 16,
+        fontWeight: 600,
+        color: STATUS[st].color
+      }
+    }, p.stock), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 12,
+        color: 'var(--text-faint)'
+      }
+    }, "packs")), /*#__PURE__*/React.createElement(StockBar, {
+      stock: p.stock,
+      reorder: p.reorder
+    })), /*#__PURE__*/React.createElement("td", {
+      style: {
+        ...td,
+        textAlign: 'right',
+        fontFamily: 'var(--font-mono)',
+        fontSize: 13.5,
+        color: 'var(--text-muted)'
+      }
+    }, p.reorder), /*#__PURE__*/React.createElement("td", {
+      style: td
+    }, /*#__PURE__*/React.createElement(Badge, {
+      tone: STATUS[st].tone
+    }, STATUS[st].label)), /*#__PURE__*/React.createElement("td", {
+      style: td
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        justifyContent: 'center'
+      }
+    }, /*#__PURE__*/React.createElement(Step, {
+      p: p,
+      dir: -1
+    }), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: 'var(--font-mono)',
+        fontSize: 14,
+        fontWeight: 600,
+        minWidth: 34,
+        textAlign: 'center',
+        color: 'var(--text-strong)'
+      }
+    }, p.stock), /*#__PURE__*/React.createElement(Step, {
+      p: p,
+      dir: 1
+    }))), /*#__PURE__*/React.createElement("td", {
+      style: {
+        ...td,
+        textAlign: 'right'
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: () => onRestock(p),
+      style: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 6,
+        padding: '7px 14px',
+        borderRadius: 'var(--radius-pill)',
+        border: '1px solid var(--line-gold)',
+        background: 'var(--accent-soft)',
+        color: 'var(--gold-200)',
+        cursor: 'pointer',
+        fontSize: 13,
+        fontWeight: 600
+      },
+      onMouseEnter: e => e.currentTarget.style.background = 'rgba(205,168,91,0.2)',
+      onMouseLeave: e => e.currentTarget.style.background = 'var(--accent-soft)'
+    }, /*#__PURE__*/React.createElement(Ic, {
+      n: "plus",
+      s: 14
+    }), " Restock")));
+  }), rows.length === 0 && /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
+    colSpan: 7,
+    style: {
+      ...td,
+      textAlign: 'center',
+      padding: '48px 0',
+      color: 'var(--text-muted)'
+    }
+  }, "No products match your search."))))));
+}
+window.Inventory = Inventory;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/admin/Inventory.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/admin/Receive.jsx
+try { (() => {
+/* Receive — check in incoming purchase orders, updating stock in bulk. */
+function Receive({
+  shipments,
+  inventory,
+  doneIds,
+  onReceivePO
+}) {
+  const Ic = window.Icon;
+  const {
+    Button,
+    Badge
+  } = window.EmberTobaccoCoDesignSystem_3a8c24;
+  const {
+    Thumb
+  } = window.AdminUI;
+  const supp = window.EMBER_SUPPLIERS;
+  const byId = id => inventory.find(p => p.id === id) || {
+    name: id,
+    brand: '',
+    sku: id
+  };
+
+  // local editable received counts: { [poId]: { [productId]: qty } }
+  const [counts, setCounts] = React.useState(() => {
+    const init = {};
+    shipments.forEach(s => {
+      init[s.id] = {};
+      s.lines.forEach(l => init[s.id][l.id] = l.qty);
+    });
+    return init;
+  });
+  const setCount = (po, pid, v) => setCounts(c => ({
+    ...c,
+    [po]: {
+      ...c[po],
+      [pid]: Math.max(0, v)
+    }
+  }));
+  const statusBadge = s => {
+    if (doneIds.includes(s.id)) return /*#__PURE__*/React.createElement(Badge, {
+      tone: "instock",
+      variant: "solid"
+    }, "Received");
+    if (s.status === 'arrived') return /*#__PURE__*/React.createElement(Badge, {
+      tone: "gold",
+      variant: "solid"
+    }, "Arrived");
+    return /*#__PURE__*/React.createElement(Badge, {
+      tone: "neutral"
+    }, "In transit");
+  };
+  const labelCss = {
+    fontFamily: 'var(--font-label)',
+    fontSize: 10.5,
+    fontWeight: 600,
+    letterSpacing: '0.14em',
+    textTransform: 'uppercase',
+    color: 'var(--text-muted)'
+  };
+  const sorted = [...shipments].sort((a, b) => {
+    const w = s => doneIds.includes(s.id) ? 2 : s.status === 'arrived' ? 0 : 1;
+    return w(a) - w(b);
+  });
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fade-in",
+    style: {
+      padding: '24px 32px 48px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 18,
+      maxWidth: 880
+    }
+  }, sorted.map(s => {
+    const done = doneIds.includes(s.id);
+    const total = s.lines.reduce((t, l) => t + (counts[s.id][l.id] ?? l.qty), 0);
+    return /*#__PURE__*/React.createElement("div", {
+      key: s.id,
+      style: {
+        background: 'var(--surface-card)',
+        border: '1px solid ' + (s.status === 'arrived' && !done ? 'var(--line-gold)' : 'var(--line)'),
+        borderRadius: 'var(--radius-lg)',
+        overflow: 'hidden',
+        opacity: done ? 0.72 : 1
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16,
+        padding: '16px 20px',
+        borderBottom: '1px solid var(--line)',
+        background: 'var(--surface-inset)'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: 42,
+        height: 42,
+        flex: 'none',
+        borderRadius: 'var(--radius-md)',
+        background: 'var(--surface-raised)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'var(--gold-300)'
+      }
+    }, /*#__PURE__*/React.createElement(Ic, {
+      n: "truck",
+      s: 20
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: 1
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: 'var(--font-mono)',
+        fontSize: 15,
+        fontWeight: 600,
+        color: 'var(--text-strong)'
+      }
+    }, s.id), statusBadge(s)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 13,
+        color: 'var(--text-muted)',
+        marginTop: 2
+      }
+    }, supp[s.supplier].name, " \xB7 lead ", supp[s.supplier].lead)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        textAlign: 'right'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: labelCss
+    }, "ETA"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 14,
+        fontWeight: 600,
+        color: 'var(--text-body)',
+        marginTop: 2
+      }
+    }, s.eta))), /*#__PURE__*/React.createElement("div", null, s.lines.map((l, i) => {
+      const p = byId(l.id);
+      const val = counts[s.id][l.id] ?? l.qty;
+      const mismatch = val !== l.qty;
+      return /*#__PURE__*/React.createElement("div", {
+        key: l.id,
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          gap: 14,
+          padding: '12px 20px',
+          borderTop: i ? '1px solid var(--line)' : 'none'
+        }
+      }, /*#__PURE__*/React.createElement(Thumb, {
+        p: p,
+        size: 34
+      }), /*#__PURE__*/React.createElement("div", {
+        style: {
+          flex: 1,
+          minWidth: 0
+        }
+      }, /*#__PURE__*/React.createElement("div", {
+        style: {
+          fontSize: 14,
+          fontWeight: 600,
+          color: 'var(--text-strong)'
+        }
+      }, p.brand, " ", p.name), /*#__PURE__*/React.createElement("div", {
+        style: {
+          fontFamily: 'var(--font-mono)',
+          fontSize: 11.5,
+          color: 'var(--text-faint)'
+        }
+      }, p.sku, " \xB7 expected ", l.qty)), done ? /*#__PURE__*/React.createElement("span", {
+        style: {
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 6,
+          fontFamily: 'var(--font-mono)',
+          fontSize: 14,
+          fontWeight: 600,
+          color: 'var(--in-stock)'
+        }
+      }, /*#__PURE__*/React.createElement(Ic, {
+        n: "check",
+        s: 16
+      }), " +", val) : /*#__PURE__*/React.createElement("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          gap: 8
+        }
+      }, /*#__PURE__*/React.createElement("button", {
+        onClick: () => setCount(s.id, l.id, val - 1),
+        style: {
+          width: 30,
+          height: 30,
+          borderRadius: 'var(--radius-sm)',
+          border: '1px solid var(--border)',
+          background: 'var(--surface-inset)',
+          color: 'var(--text-body)',
+          cursor: 'pointer',
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }
+      }, /*#__PURE__*/React.createElement(Ic, {
+        n: "minus",
+        s: 14
+      })), /*#__PURE__*/React.createElement("input", {
+        type: "number",
+        value: val,
+        min: 0,
+        onChange: e => setCount(s.id, l.id, parseInt(e.target.value || '0', 10)),
+        style: {
+          width: 66,
+          height: 34,
+          textAlign: 'center',
+          background: 'var(--surface-inset)',
+          border: '1px solid ' + (mismatch ? 'var(--line-gold)' : 'var(--border)'),
+          borderRadius: 'var(--radius-sm)',
+          color: 'var(--text-strong)',
+          fontFamily: 'var(--font-mono)',
+          fontSize: 15,
+          fontWeight: 600,
+          outline: 'none'
+        }
+      }), /*#__PURE__*/React.createElement("button", {
+        onClick: () => setCount(s.id, l.id, val + 1),
+        style: {
+          width: 30,
+          height: 30,
+          borderRadius: 'var(--radius-sm)',
+          border: '1px solid var(--border)',
+          background: 'var(--surface-inset)',
+          color: 'var(--text-body)',
+          cursor: 'pointer',
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }
+      }, /*#__PURE__*/React.createElement(Ic, {
+        n: "plus",
+        s: 14
+      }))));
+    })), !done && /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '14px 20px',
+        borderTop: '1px solid var(--line)'
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 13,
+        color: 'var(--text-muted)'
+      }
+    }, "Checking in ", /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: 'var(--font-mono)',
+        color: 'var(--text-strong)',
+        fontWeight: 600
+      }
+    }, total), " packs across ", s.lines.length, " line", s.lines.length > 1 ? 's' : ''), /*#__PURE__*/React.createElement(Button, {
+      variant: "primary",
+      size: "sm",
+      iconLeft: /*#__PURE__*/React.createElement(Ic, {
+        n: "check-check",
+        s: 16
+      }),
+      onClick: () => onReceivePO(s, counts[s.id])
+    }, "Check in shipment")));
+  }));
+}
+window.Receive = Receive;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/admin/Receive.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/admin/Sidebar.jsx
+try { (() => {
+/* Sidebar — back-office primary nav. */
+function Sidebar({
+  view,
+  onNav,
+  lowCount,
+  arrivedCount
+}) {
+  const Ic = window.Icon;
+  const items = [{
+    id: 'dashboard',
+    label: 'Dashboard',
+    icon: 'layout-dashboard'
+  }, {
+    id: 'inventory',
+    label: 'Inventory',
+    icon: 'package',
+    badge: lowCount
+  }, {
+    id: 'receive',
+    label: 'Receive',
+    icon: 'truck',
+    badge: arrivedCount,
+    badgeTone: 'gold'
+  }, {
+    id: 'activity',
+    label: 'Activity',
+    icon: 'history'
+  }];
+  return /*#__PURE__*/React.createElement("aside", {
+    style: {
+      width: 248,
+      flex: 'none',
+      height: '100vh',
+      position: 'sticky',
+      top: 0,
+      background: 'var(--ink-900)',
+      borderRight: '1px solid var(--line)',
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      padding: '22px 22px 20px',
+      borderBottom: '1px solid var(--line)'
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 64 64",
+    width: "32",
+    height: "32"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M32 8 L52 32 L32 56 L12 32 Z",
+    fill: "none",
+    stroke: "#CDA85B",
+    strokeWidth: "1.8"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M32 18 L44 32 L32 46 L20 32 Z",
+    fill: "#0E0C0B"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "32",
+    cy: "32",
+    r: "5",
+    fill: "#A63B2B"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "32",
+    cy: "32",
+    r: "2.2",
+    fill: "#E3C77E"
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      lineHeight: 1
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-display)',
+      fontSize: 19,
+      fontWeight: 600,
+      letterSpacing: '0.05em',
+      color: 'var(--text-strong)'
+    }
+  }, "EMBER"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-label)',
+      fontSize: 7.5,
+      fontWeight: 600,
+      letterSpacing: '0.3em',
+      textTransform: 'uppercase',
+      color: 'var(--gold-400)',
+      marginTop: 3
+    }
+  }, "Back Office"))), /*#__PURE__*/React.createElement("nav", {
+    style: {
+      padding: '16px 12px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 2
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-label)',
+      fontSize: 10,
+      fontWeight: 600,
+      letterSpacing: '0.16em',
+      textTransform: 'uppercase',
+      color: 'var(--text-faint)',
+      padding: '6px 12px 8px'
+    }
+  }, "Operations"), items.map(it => {
+    const on = view === it.id;
+    return /*#__PURE__*/React.createElement("button", {
+      key: it.id,
+      onClick: () => onNav(it.id),
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 12,
+        width: '100%',
+        padding: '10px 12px',
+        borderRadius: 'var(--radius-md)',
+        border: 'none',
+        cursor: 'pointer',
+        textAlign: 'left',
+        background: on ? 'var(--accent-soft)' : 'transparent',
+        color: on ? 'var(--gold-200)' : 'var(--text-muted)',
+        boxShadow: on ? 'inset 2px 0 0 var(--gold-400)' : 'none',
+        transition: 'background 0.14s, color 0.14s'
+      },
+      onMouseEnter: e => {
+        if (!on) e.currentTarget.style.background = 'var(--surface-raised)';
+      },
+      onMouseLeave: e => {
+        if (!on) e.currentTarget.style.background = 'transparent';
+      }
+    }, /*#__PURE__*/React.createElement(Ic, {
+      n: it.icon,
+      s: 18
+    }), /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        fontSize: 14.5,
+        fontWeight: on ? 600 : 500
+      }
+    }, it.label), it.badge > 0 && /*#__PURE__*/React.createElement("span", {
+      style: {
+        minWidth: 20,
+        height: 20,
+        padding: '0 6px',
+        borderRadius: 999,
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontFamily: 'var(--font-mono)',
+        fontSize: 11,
+        fontWeight: 600,
+        background: it.badgeTone === 'gold' ? 'var(--gold-400)' : 'rgba(201,162,39,0.18)',
+        color: it.badgeTone === 'gold' ? 'var(--ink-950)' : 'var(--amber-500)'
+      }
+    }, it.badge));
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 'auto',
+      padding: 16,
+      borderTop: '1px solid var(--line)'
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "../storefront/index.html",
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      padding: '10px 12px',
+      borderRadius: 'var(--radius-md)',
+      color: 'var(--text-faint)',
+      textDecoration: 'none',
+      fontSize: 13
+    },
+    onMouseEnter: e => e.currentTarget.style.color = 'var(--text-body)',
+    onMouseLeave: e => e.currentTarget.style.color = 'var(--text-faint)'
+  }, /*#__PURE__*/React.createElement(Ic, {
+    n: "external-link",
+    s: 15
+  }), /*#__PURE__*/React.createElement("span", null, "View storefront"))));
+}
+window.Sidebar = Sidebar;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/admin/Sidebar.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/admin/Topbar.jsx
+try { (() => {
+/* Topbar — page title, global search, staff identity. */
+function Topbar({
+  title,
+  subtitle,
+  query,
+  onQuery
+}) {
+  const Ic = window.Icon;
+  const s = window.EMBER_STAFF;
+  return /*#__PURE__*/React.createElement("header", {
+    style: {
+      position: 'sticky',
+      top: 0,
+      zIndex: 20,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 20,
+      padding: '18px 32px',
+      background: 'rgba(14,12,11,0.86)',
+      backdropFilter: 'blur(14px)',
+      borderBottom: '1px solid var(--line)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("h1", {
+    style: {
+      margin: 0,
+      fontFamily: 'var(--font-display)',
+      fontSize: 26,
+      fontWeight: 600,
+      letterSpacing: '-0.01em',
+      color: 'var(--text-strong)'
+    }
+  }, title), subtitle && /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '3px 0 0',
+      fontSize: 13,
+      color: 'var(--text-muted)'
+    }
+  }, subtitle)), onQuery && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      width: 280,
+      padding: '0 14px',
+      height: 42,
+      background: 'var(--surface-inset)',
+      border: '1px solid var(--border)',
+      borderRadius: 'var(--radius-md)'
+    }
+  }, /*#__PURE__*/React.createElement(Ic, {
+    n: "search",
+    s: 16,
+    color: "var(--text-faint)"
+  }), /*#__PURE__*/React.createElement("input", {
+    value: query,
+    onChange: e => onQuery(e.target.value),
+    placeholder: "Search SKU or name\u2026",
+    style: {
+      flex: 1,
+      minWidth: 0,
+      background: 'none',
+      border: 'none',
+      outline: 'none',
+      color: 'var(--text-strong)',
+      fontFamily: 'var(--font-body)',
+      fontSize: 14
+    }
+  }), query && /*#__PURE__*/React.createElement("button", {
+    onClick: () => onQuery(''),
+    style: {
+      background: 'none',
+      border: 'none',
+      cursor: 'pointer',
+      color: 'var(--text-faint)',
+      display: 'inline-flex',
+      padding: 0
+    }
+  }, /*#__PURE__*/React.createElement(Ic, {
+    n: "x",
+    s: 15
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      paddingLeft: 8,
+      borderLeft: '1px solid var(--line)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: 'right',
+      lineHeight: 1.3
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13.5,
+      fontWeight: 600,
+      color: 'var(--text-strong)'
+    }
+  }, s.name), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: 'var(--font-label)',
+      fontSize: 10,
+      letterSpacing: '0.12em',
+      textTransform: 'uppercase',
+      color: 'var(--gold-400)'
+    }
+  }, s.role, " \xB7 ", s.store)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 40,
+      height: 40,
+      flex: 'none',
+      borderRadius: 999,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: 'linear-gradient(150deg, var(--gold-500), var(--ember-500))',
+      color: 'var(--ink-950)',
+      fontWeight: 700,
+      fontSize: 14,
+      letterSpacing: '0.02em'
+    }
+  }, s.initials)));
+}
+window.Topbar = Topbar;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/admin/Topbar.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/admin/data.js
+try { (() => {
+/* Ember Tobacco Co. — Back-office inventory data (mock).
+ * Stock is in PACKS. status derived: out (0) / low (<= reorder) / ok.
+ * Photos reuse the storefront assets at ../storefront/assets/products/<id>.png */
+
+window.EMBER_STAFF = {
+  name: 'Dana Whitlock',
+  role: 'Floor Lead',
+  initials: 'DW',
+  store: 'Camden High St.'
+};
+window.EMBER_SUPPLIERS = {
+  'man': {
+    id: 'man',
+    name: 'Manchester Distribution',
+    lead: '2–3 days'
+  },
+  'ssi': {
+    id: 'ssi',
+    name: 'Seven Stars Import (JP)',
+    lead: '10–14 days'
+  }
+};
+window.EMBER_INVENTORY = [{
+  id: 'man-sapphire',
+  sku: 'MAN-SAP-16',
+  brand: 'Manchester',
+  name: 'Sapphire 16mc',
+  cat: 'Regular',
+  price: 38.95,
+  stock: 240,
+  reorder: 80,
+  supplier: 'man',
+  accent: 'var(--blue-400)',
+  image: '../storefront/assets/products/man-sapphire.png'
+}, {
+  id: 'man-royal',
+  sku: 'MAN-ROY-16',
+  brand: 'Manchester',
+  name: 'Royal 16mc',
+  cat: 'Regular',
+  price: 38.95,
+  stock: 64,
+  reorder: 80,
+  supplier: 'man',
+  accent: 'var(--ember-500)',
+  image: '../storefront/assets/products/man-royal.png'
+}, {
+  id: 'man-special',
+  sku: 'MAN-SPC-10',
+  brand: 'Manchester',
+  name: 'Special 10mc',
+  cat: 'Regular',
+  price: 36.95,
+  stock: 18,
+  reorder: 40,
+  supplier: 'man',
+  accent: 'var(--gold-500)',
+  image: '../storefront/assets/products/man-special.png'
+}, {
+  id: 'man-green',
+  sku: 'MAN-GRN-06',
+  brand: 'Manchester',
+  name: 'Green Crush 6mc',
+  cat: 'Menthol',
+  price: 39.95,
+  stock: 12,
+  reorder: 60,
+  supplier: 'man',
+  accent: 'var(--green-500)',
+  image: '../storefront/assets/products/man-green.png'
+}, {
+  id: 'man-blue',
+  sku: 'MAN-BLU-06',
+  brand: 'Manchester',
+  name: 'Blue Crush 6mc',
+  cat: 'Menthol',
+  price: 39.95,
+  stock: 310,
+  reorder: 80,
+  supplier: 'man',
+  accent: 'var(--blue-400)',
+  image: '../storefront/assets/products/man-blue.png'
+}, {
+  id: 'man-light',
+  sku: 'MAN-LGT-10',
+  brand: 'Manchester',
+  name: 'Light 10mc',
+  cat: 'Regular',
+  price: 37.95,
+  stock: 0,
+  reorder: 40,
+  supplier: 'man',
+  accent: 'var(--cream-400)',
+  image: '../storefront/assets/products/man-light.png'
+}, {
+  id: 'man-double',
+  sku: 'MAN-DBL-00',
+  brand: 'Manchester',
+  name: 'Double Drive',
+  cat: 'Menthol',
+  price: 41.95,
+  stock: 150,
+  reorder: 60,
+  supplier: 'man',
+  accent: 'var(--blue-400)',
+  image: '../storefront/assets/products/man-double-drive.png'
+}, {
+  id: 'sevenstars',
+  sku: 'SSI-CHR-10',
+  brand: 'Seven Stars',
+  name: 'Charcoal Filter 10',
+  cat: 'Regular',
+  price: 46.95,
+  stock: 26,
+  reorder: 30,
+  supplier: 'ssi',
+  accent: 'var(--gold-400)',
+  image: '../storefront/assets/products/sevenstars.png'
+}];
+
+/* Expected/incoming purchase orders for the Receive screen. */
+window.EMBER_SHIPMENTS = [{
+  id: 'PO-1042',
+  supplier: 'man',
+  status: 'arrived',
+  eta: 'Today',
+  lines: [{
+    id: 'man-royal',
+    qty: 200
+  }, {
+    id: 'man-special',
+    qty: 120
+  }, {
+    id: 'man-light',
+    qty: 240
+  }]
+}, {
+  id: 'PO-1043',
+  supplier: 'ssi',
+  status: 'in-transit',
+  eta: 'Jun 24',
+  lines: [{
+    id: 'sevenstars',
+    qty: 144
+  }]
+}, {
+  id: 'PO-1041',
+  supplier: 'man',
+  status: 'in-transit',
+  eta: 'Jun 22',
+  lines: [{
+    id: 'man-green',
+    qty: 180
+  }, {
+    id: 'man-double',
+    qty: 60
+  }]
+}];
+
+/* Seed activity log — newest first. mins = minutes ago. */
+window.EMBER_ACTIVITY = [{
+  id: 'a1',
+  mins: 24,
+  who: 'Dana Whitlock',
+  type: 'adjust',
+  product: 'man-blue',
+  delta: -6,
+  note: 'Damaged in transit'
+}, {
+  id: 'a2',
+  mins: 96,
+  who: 'Marcus Reed',
+  type: 'sale',
+  product: 'man-royal',
+  delta: -12,
+  note: 'POS register 2'
+}, {
+  id: 'a3',
+  mins: 140,
+  who: 'Dana Whitlock',
+  type: 'receive',
+  product: 'man-blue',
+  delta: 96,
+  note: 'PO-1039'
+}, {
+  id: 'a4',
+  mins: 280,
+  who: 'Priya Anand',
+  type: 'count',
+  product: 'man-special',
+  delta: -3,
+  note: 'Cycle count correction'
+}, {
+  id: 'a5',
+  mins: 1320,
+  who: 'Marcus Reed',
+  type: 'receive',
+  product: 'man-double',
+  delta: 120,
+  note: 'PO-1038'
+}, {
+  id: 'a6',
+  mins: 1490,
+  who: 'Dana Whitlock',
+  type: 'adjust',
+  product: 'man-light',
+  delta: -8,
+  note: 'Wrote off expired'
+}];
+
+/* helpers */
+window.stockStatus = function (p) {
+  if (p.stock <= 0) return 'out';
+  if (p.stock <= p.reorder) return 'low';
+  return 'ok';
+};
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/admin/data.js", error: String((e && e.message) || e) }); }
+
+// ui_kits/admin/icons.js
+try { (() => {
+/* Safe Lucide icon for React: React owns only an empty <span>; the <i data-lucide>
+   is created imperatively inside it and swapped to <svg> by lucide — so re-renders
+   never collide with reconciliation (no removeChild crashes). */
+window.Icon = function Icon({
+  n,
+  s = 18,
+  color
+}) {
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    el.innerHTML = '';
+    const i = document.createElement('i');
+    i.setAttribute('data-lucide', n);
+    el.appendChild(i);
+    if (window.lucide) window.lucide.createIcons({
+      attrs: {
+        width: s,
+        height: s
+      }
+    });
+  }, [n, s]);
+  return React.createElement('span', {
+    ref,
+    style: {
+      display: 'inline-flex',
+      width: s,
+      height: s,
+      color: color || 'currentColor'
+    }
+  });
+};
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/admin/icons.js", error: String((e && e.message) || e) }); }
+
+// ui_kits/admin/ui.jsx
+try { (() => {
+/* Shared back-office UI helpers, exported on window.AdminUI. */
+(function () {
+  const STATUS = {
+    ok: {
+      label: 'In stock',
+      color: 'var(--in-stock)',
+      tone: 'instock'
+    },
+    low: {
+      label: 'Low',
+      color: 'var(--low-stock)',
+      tone: 'low'
+    },
+    out: {
+      label: 'Out',
+      color: 'var(--out-of-stock)',
+      tone: 'out'
+    }
+  };
+  function timeAgo(mins) {
+    if (mins < 1) return 'just now';
+    if (mins < 60) return mins + 'm ago';
+    const h = Math.floor(mins / 60);
+    if (h < 24) return h + 'h ago';
+    const d = Math.floor(h / 24);
+    return d + 'd ago';
+  }
+
+  // Product thumbnail tile matching the storefront swatch treatment.
+  function Thumb({
+    p,
+    size = 40
+  }) {
+    return /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: size,
+        height: size * 1.2,
+        flex: 'none',
+        borderRadius: 'var(--radius-xs)',
+        overflow: 'hidden',
+        background: 'linear-gradient(160deg, var(--ink-600), var(--ink-850))',
+        border: '1px solid var(--border)',
+        display: 'flex',
+        alignItems: 'flex-end',
+        justifyContent: 'center',
+        padding: p.image ? 0 : 6
+      }
+    }, p.image ? /*#__PURE__*/React.createElement("img", {
+      src: p.image,
+      alt: "",
+      onError: e => {
+        e.currentTarget.style.display = 'none';
+      },
+      style: {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover'
+      }
+    }) : /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: size * 0.32,
+        height: 3,
+        background: p.accent,
+        borderRadius: 2
+      }
+    }));
+  }
+
+  // Stock vs reorder bar.
+  function StockBar({
+    stock,
+    reorder
+  }) {
+    const cap = Math.max(reorder * 2, stock, 1);
+    const pct = Math.min(100, stock / cap * 100);
+    const status = stock <= 0 ? 'out' : stock <= reorder ? 'low' : 'ok';
+    const reorderPct = Math.min(100, reorder / cap * 100);
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'relative',
+        height: 6,
+        borderRadius: 999,
+        background: 'var(--ink-600)',
+        overflow: 'visible'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'absolute',
+        inset: 0,
+        width: pct + '%',
+        borderRadius: 999,
+        background: STATUS[status].color,
+        transition: 'width 0.3s var(--ease-out)'
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      title: "Reorder point",
+      style: {
+        position: 'absolute',
+        top: -2,
+        bottom: -2,
+        left: reorderPct + '%',
+        width: 1.5,
+        background: 'var(--cream-300)',
+        opacity: 0.5
+      }
+    }));
+  }
+  window.AdminUI = {
+    STATUS,
+    timeAgo,
+    Thumb,
+    StockBar
+  };
+})();
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/admin/ui.jsx", error: String((e && e.message) || e) }); }
+
 // ui_kits/storefront/App.jsx
 try { (() => {
 /* App — orchestrates the storefront: home → product detail → cart → checkout → confirmation. */
@@ -788,7 +3238,7 @@ function App() {
   const [cartOpen, setCartOpen] = React.useState(false);
   const [items, setItems] = React.useState(() => {
     try {
-      const s = localStorage.getItem('cart');
+      const s = localStorage.getItem('ember_cart');
       return s ? JSON.parse(s) : [];
     } catch (e) {
       return [];
@@ -797,13 +3247,13 @@ function App() {
   // Persist cart across reloads.
   React.useEffect(() => {
     try {
-      localStorage.setItem('cart', JSON.stringify(items));
+      localStorage.setItem('ember_cart', JSON.stringify(items));
     } catch (e) {}
   }, [items]);
   const [shopCat, setShopCat] = React.useState('all');
   const [toast, setToast] = React.useState(null);
   const toastTimer = React.useRef(null);
-  const products = window.PRODUCTS || [];
+  const products = window.EMBER_PRODUCTS || [];
 
   // Handle return from Zap Pay (live mode): ?success=true&orderId=…
   React.useEffect(() => {
@@ -893,7 +3343,7 @@ function App() {
     });
   };
   const placeOrder = total => {
-    const number = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
+    const number = 'EM-' + Math.floor(100000 + Math.random() * 900000);
     // Live: hand off to Zap Pay (redirects out, returns to this page).
     if (window.ZapPay && window.ZapPay.isLive()) {
       sessionStorage.setItem('zap_total', String(total));
@@ -1320,7 +3770,7 @@ function CartDrawer({
       color: 'var(--text-faint)',
       margin: '0 0 16px'
     }
-  }, "{{CART_NOTE}}"), /*#__PURE__*/React.createElement(Button, {
+  }, "Includes GST. Shipping & ID check calculated at checkout."), /*#__PURE__*/React.createElement(Button, {
     variant: "primary",
     size: "lg",
     fullWidth: true,
@@ -1778,7 +4228,7 @@ function Checkout({
       color: 'var(--text-faint)',
       margin: '12px 0 0'
     }
-  }, "{{CHECKOUT_NOTE}}")))), /*#__PURE__*/React.createElement("div", {
+  }, "Includes GST.")))), /*#__PURE__*/React.createElement("div", {
     style: {
       height: 90
     }
@@ -1849,7 +4299,7 @@ function Confirmation({
       lineHeight: 1.6,
       margin: '0 0 32px'
     }
-  }, "{{CONFIRMATION_BODY}}"), /*#__PURE__*/React.createElement("div", {
+  }, "We\u2019ve received your order and will send a confirmation and tracking details by email shortly. Your parcel ships discreetly, Australia-wide."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'inline-flex',
       gap: 40,
@@ -1916,12 +4366,12 @@ try { (() => {
 function Footer({
   onShop,
   whatsapp = '61400000000',
-  email = '{{COMPANY_EMAIL}}'
+  email = 'hello@embertobacco.com.au'
 }) {
   const Ic = window.Icon;
   const waHref = 'https://wa.me/' + String(whatsapp).replace(/[^0-9]/g, '');
   const waDisplay = '+' + String(whatsapp).replace(/[^0-9]/g, '');
-  const shopLinks = [['All', 'all'], ['{{CATEGORY_1}}', 'cat-1'], ['{{CATEGORY_2}}', 'cat-2']];
+  const shopLinks = [['All', 'all'], ['Regular', 'regular'], ['Menthol', 'menthol']];
   return /*#__PURE__*/React.createElement("footer", {
     style: {
       borderTop: '1px solid var(--line)',
@@ -1978,7 +4428,7 @@ function Footer({
       letterSpacing: '0.05em',
       color: 'var(--text-strong)'
     }
-  }, "{{COMPANY_NAME}}")), /*#__PURE__*/React.createElement("p", {
+  }, "EMBER")), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: 'var(--font-body)',
       fontSize: 13,
@@ -1986,7 +4436,7 @@ function Footer({
       lineHeight: 1.6,
       margin: 0
     }
-  }, "{{FOOTER_TAGLINE}}"), /*#__PURE__*/React.createElement("div", {
+  }, "The Manchester range \u2014 regular and menthol crush \u2014 shipped discreetly across Australia."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       gap: 16,
@@ -2129,13 +4579,13 @@ function Footer({
       fontSize: 11,
       color: 'var(--text-faint)'
     }
-  }, "\xA9 2026 {{COMPANY_NAME}}"), /*#__PURE__*/React.createElement("span", {
+  }, "\xA9 2026 Ember Tobacco Co."), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: 'var(--font-mono)',
       fontSize: 11,
       color: 'var(--text-faint)'
     }
-  }, "{{FOOTER_NOTE}}"))));
+  }, "Shipping Australia-wide"))));
 }
 window.Footer = Footer;
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/Footer.jsx", error: String((e && e.message) || e) }); }
@@ -2167,8 +4617,14 @@ function ProductDetail({
     out: ['out', 'Out of stock']
   };
   const [tone, label] = stockMap[p.stock] || stockMap.instock;
-  const desc = `${p.brand} ${p.name} — {{PRODUCT_DESCRIPTION}}`;
-  const details = [['Brand', p.brand], ['Format', p.unit.replace(/^per /, '').replace(/^/, c => c.toUpperCase())], ['Category', '{{CATEGORY}}'], ['SKU', p.id.toUpperCase()]];
+  const catWord = {
+    cigarettes: 'cigarettes',
+    cigars: 'cigars',
+    rolling: 'rolling tobacco',
+    accessories: 'accessory'
+  }[p.cat] || 'tobacco';
+  const desc = `${p.brand} ${p.name} — a ${catWord} selection from our curated range, ${p.unit}. Stored in a temperature-controlled, smoke-free facility and shipped discreetly across Australia.`;
+  const details = [['Brand', p.brand], ['Format', p.unit.replace(/^per /, '').replace(/^/, c => c.toUpperCase())], ['Category', catWord.charAt(0).toUpperCase() + catWord.slice(1)], ['SKU', p.id.toUpperCase()]];
   return /*#__PURE__*/React.createElement("main", {
     style: {
       maxWidth: 'var(--container-max)',
@@ -2391,7 +4847,7 @@ function ProductDetail({
     }
   }, /*#__PURE__*/React.createElement(SectionHead, {
     eyebrow: "You may also like",
-    title: "{{RELATED_TITLE}}"
+    title: "More from the range"
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
@@ -2439,16 +4895,16 @@ function ProductGrid({
     Badge
   } = window.EmberTobaccoCoDesignSystem_3a8c24;
   const isMobile = window.useIsMobile();
-  const products = window.PRODUCTS || [];
+  const products = window.EMBER_PRODUCTS || [];
   const cats = [{
     id: 'all',
     label: 'All'
   }, {
-    id: 'cat-1',
-    label: '{{CATEGORY_1}}'
+    id: 'regular',
+    label: 'Regular'
   }, {
-    id: 'cat-2',
-    label: '{{CATEGORY_2}}'
+    id: 'menthol',
+    label: 'Menthol'
   }];
   const [internalCat, setInternalCat] = React.useState('all');
   const curCat = cat !== undefined ? cat : internalCat;
@@ -2461,8 +4917,8 @@ function ProductGrid({
       padding: '64px var(--gutter) 0'
     }
   }, /*#__PURE__*/React.createElement(SectionHead, {
-    eyebrow: "{{SHOP_EYEBROW}}",
-    title: "{{SHOP_TITLE}}"
+    eyebrow: "The Manchester range",
+    title: "Browse our cigarettes"
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
@@ -2594,7 +5050,7 @@ function AnnouncementBar() {
       textTransform: 'uppercase',
       color: 'var(--cream-50)'
     }
-  }, "{{ANNOUNCEMENT}}")));
+  }, "Free discreet shipping on orders over\xA0$150 \xA0\xB7\xA0 Same-day dispatch before 2pm")));
 }
 window.AnnouncementBar = AnnouncementBar;
 function BrandStory({
@@ -2605,7 +5061,7 @@ function BrandStory({
   } = window.EmberTobaccoCoDesignSystem_3a8c24;
   const Icon = window.Icon;
   const isMobile = window.useIsMobile();
-  const points = [['leaf', '{{STORY_POINT_1}}'], ['snowflake', '{{STORY_POINT_2}}'], ['package-check', '{{STORY_POINT_3}}']];
+  const points = [['leaf', 'Classic Virginia & American blends'], ['snowflake', 'Menthol crush-capsule range'], ['package-check', 'Sealed fresh, dispatched same day']];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: 'var(--ink-850)',
@@ -2636,8 +5092,8 @@ function BrandStory({
       overflow: 'hidden'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "",
-    alt: "{{STORY_IMAGE}}",
+    src: "assets/banners/brand-story.jpg",
+    alt: "Manchester editorial still life",
     style: {
       position: 'absolute',
       inset: 0,
@@ -2659,7 +5115,7 @@ function BrandStory({
       color: 'var(--gold-400)',
       margin: '0 0 14px'
     }
-  }, "{{STORY_EYEBROW}}"), /*#__PURE__*/React.createElement("h2", {
+  }, "House of Quality"), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: 'var(--font-display)',
       fontSize: 'clamp(30px, 3.8vw, 46px)',
@@ -2669,7 +5125,7 @@ function BrandStory({
       lineHeight: 1.08,
       letterSpacing: '-0.015em'
     }
-  }, "{{STORY_TITLE}}"), /*#__PURE__*/React.createElement("p", {
+  }, "Manchester, United\xA0Kingdom"), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: 'var(--font-body)',
       fontSize: 16.5,
@@ -2678,7 +5134,7 @@ function BrandStory({
       margin: '0 0 28px',
       maxWidth: 460
     }
-  }, "{{STORY_BODY}}"), /*#__PURE__*/React.createElement("div", {
+  }, "A refined range of crafted blends \u2014 from smooth Sapphire and Light to the bold Royal Red, plus a crush-capsule menthol line. Sealed for freshness and shipped discreetly across Australia."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -2718,23 +5174,23 @@ function BrandStory({
     variant: "primary",
     size: "lg",
     onClick: onShop
-  }, "{{CTA_PRIMARY}}")))));
+  }, "Shop the range")))));
 }
 window.BrandStory = BrandStory;
 function Reviews() {
   const isMobile = window.useIsMobile();
   const reviews = [{
-    name: '{{REVIEW_1_NAME}}',
-    place: '{{REVIEW_1_PLACE}}',
-    text: '{{REVIEW_1_TEXT}}'
+    name: 'Dane M.',
+    place: 'Perth, WA',
+    text: 'Arrived in three days, packaged discreetly. Exactly as described.'
   }, {
-    name: '{{REVIEW_2_NAME}}',
-    place: '{{REVIEW_2_PLACE}}',
-    text: '{{REVIEW_2_TEXT}}'
+    name: 'Priya S.',
+    place: 'Melbourne, VIC',
+    text: 'Easy to order and Blue Crush is my go-to. Checkout was quick and simple.'
   }, {
-    name: '{{REVIEW_3_NAME}}',
-    place: '{{REVIEW_3_PLACE}}',
-    text: '{{REVIEW_3_TEXT}}'
+    name: 'Tom R.',
+    place: 'Brisbane, QLD',
+    text: 'Great range and fair prices — the WhatsApp support replied within minutes.'
   }];
   return /*#__PURE__*/React.createElement("section", {
     style: {
@@ -2743,8 +5199,8 @@ function Reviews() {
       padding: '72px var(--gutter) 0'
     }
   }, /*#__PURE__*/React.createElement(SectionHead, {
-    eyebrow: "{{REVIEWS_EYEBROW}}",
-    title: "{{REVIEWS_TITLE}}"
+    eyebrow: "What customers say",
+    title: "Trusted Australia-wide"
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
@@ -2851,8 +5307,8 @@ function HeroBanner({
     },
     shape: "rect",
     fit: "cover",
-    src: "",
-    placeholder: "{{HERO_IMAGE}}"
+    src: "assets/banners/hero.jpg",
+    placeholder: "Drop hero image"
   })), /*#__PURE__*/React.createElement("div", {
     className: "ember-fade",
     style: {
@@ -2880,7 +5336,7 @@ function HeroBanner({
     }
   }, /*#__PURE__*/React.createElement(Badge, {
     tone: "gold"
-  }, "{{HERO_BADGE}}")), /*#__PURE__*/React.createElement("h1", {
+  }, "Premium Selection")), /*#__PURE__*/React.createElement("h1", {
     className: "ember-rise",
     style: {
       animationDelay: '0.28s',
@@ -2892,7 +5348,7 @@ function HeroBanner({
       lineHeight: 1.04,
       margin: '18px 0 16px'
     }
-  }, "{{HERO_HEADLINE}}"), /*#__PURE__*/React.createElement("p", {
+  }, "Premium tobacco, delivered discreetly across Australia."), /*#__PURE__*/React.createElement("p", {
     className: "ember-rise",
     style: {
       animationDelay: '0.42s',
@@ -2903,7 +5359,7 @@ function HeroBanner({
       lineHeight: 1.6,
       margin: '0 0 28px'
     }
-  }, "{{HERO_SUBTITLE}}"), /*#__PURE__*/React.createElement("div", {
+  }, "The full Manchester range \u2014 regular blends and menthol crush \u2014 shipped discreetly across Australia."), /*#__PURE__*/React.createElement("div", {
     className: "ember-rise",
     style: {
       animationDelay: '0.54s',
@@ -2915,16 +5371,16 @@ function HeroBanner({
     variant: "primary",
     size: isMobile ? 'md' : 'lg',
     onClick: onShop
-  }, "{{CTA_PRIMARY}}"), /*#__PURE__*/React.createElement(Button, {
+  }, "Shop the range"), /*#__PURE__*/React.createElement(Button, {
     variant: "outline",
     size: isMobile ? 'md' : 'lg',
     onClick: onShop
-  }, "{{CTA_SECONDARY}}")))));
+  }, "View best sellers")))));
 }
 window.HeroBanner = HeroBanner;
 function TrustStrip() {
   const isMobile = window.useIsMobile();
-  const items = [['shield-check', '{{TRUST_1}}'], ['truck', '{{TRUST_2}}'], ['badge-check', '{{TRUST_3}}'], ['refresh-cw', '{{TRUST_4}}']];
+  const items = [['shield-check', 'Discreet, secure checkout'], ['truck', 'Fast nationwide shipping'], ['badge-check', 'Trusted brands, genuine stock'], ['refresh-cw', '7-day satisfaction guarantee']];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       maxWidth: 'var(--container-max)',
@@ -3008,29 +5464,29 @@ function CategoryShowcase({
   onPick
 }) {
   const cats = [{
-    id: 'cat-tile-1',
-    name: '{{CATEGORY_TILE_1_NAME}}',
-    note: '{{CATEGORY_1}}',
-    pick: 'cat-1',
-    img: ""
+    id: 'cat-sapphire',
+    name: 'Sapphire',
+    note: 'Regular',
+    pick: 'regular',
+    img: 'assets/products/man-sapphire.png'
   }, {
-    id: 'cat-tile-2',
-    name: '{{CATEGORY_TILE_2_NAME}}',
-    note: '{{CATEGORY_1}}',
-    pick: 'cat-1',
-    img: ""
+    id: 'cat-royal',
+    name: 'Royal',
+    note: 'Regular',
+    pick: 'regular',
+    img: 'assets/products/man-royal.png'
   }, {
-    id: 'cat-tile-3',
-    name: '{{CATEGORY_TILE_3_NAME}}',
-    note: '{{CATEGORY_2}}',
-    pick: 'cat-2',
-    img: ""
+    id: 'cat-green',
+    name: 'Green Crush',
+    note: 'Menthol',
+    pick: 'menthol',
+    img: 'assets/products/man-green.png'
   }, {
-    id: 'cat-tile-4',
-    name: '{{CATEGORY_TILE_4_NAME}}',
-    note: '{{CATEGORY_2}}',
-    pick: 'cat-2',
-    img: ""
+    id: 'cat-blue',
+    name: 'Blue Crush',
+    note: 'Menthol',
+    pick: 'menthol',
+    img: 'assets/products/man-blue.png'
   }];
   return /*#__PURE__*/React.createElement("section", {
     style: {
@@ -3039,8 +5495,8 @@ function CategoryShowcase({
       padding: '64px var(--gutter) 0'
     }
   }, /*#__PURE__*/React.createElement(SectionHead, {
-    eyebrow: "{{SHOWCASE_EYEBROW}}",
-    title: "{{SHOWCASE_TITLE}}"
+    eyebrow: "Shop by variant",
+    title: "Explore the range"
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
@@ -3122,17 +5578,17 @@ function PromoBanners({
   } = window.EmberTobaccoCoDesignSystem_3a8c24;
   const isMobile = window.useIsMobile();
   const banners = [{
-    id: 'promo-1',
-    eyebrow: '{{PROMO_1_EYEBROW}}',
-    title: '{{PROMO_1_TITLE}}',
-    cta: '{{PROMO_1_CTA}}',
-    cat: 'cat-2'
+    id: 'promo-menthol',
+    eyebrow: 'Crush capsules',
+    title: 'Pop for menthol — Green & Blue Crush',
+    cta: 'Shop menthol',
+    cat: 'menthol'
   }, {
-    id: 'promo-2',
-    eyebrow: '{{PROMO_2_EYEBROW}}',
-    title: '{{PROMO_2_TITLE}}',
-    cta: '{{PROMO_2_CTA}}',
-    cat: 'cat-1'
+    id: 'promo-regular',
+    eyebrow: 'Smooth & light',
+    title: 'Sapphire, Royal & Light blends',
+    cta: 'Shop regular',
+    cat: 'regular'
   }];
   return /*#__PURE__*/React.createElement("section", {
     style: {
@@ -3164,7 +5620,7 @@ function PromoBanners({
     },
     shape: "rect",
     fit: "cover",
-    placeholder: "{{BANNER_IMAGE}}"
+    placeholder: "Drop banner image"
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'absolute',
@@ -3226,7 +5682,7 @@ function TopNav({
   } = window.EmberTobaccoCoDesignSystem_3a8c24;
   const Ic = window.Icon;
   const isMobile = window.useIsMobile();
-  const links = [['All', 'all'], ['{{CATEGORY_1}}', 'cat-1'], ['{{CATEGORY_2}}', 'cat-2']];
+  const links = [['All', 'all'], ['Regular', 'regular'], ['Menthol', 'menthol']];
   const [active, setActive] = React.useState('All');
   const [searchOpen, setSearchOpen] = React.useState(false);
   const [acctOpen, setAcctOpen] = React.useState(false);
@@ -3323,7 +5779,7 @@ function TopNav({
       letterSpacing: '0.05em',
       color: 'var(--text-strong)'
     }
-  }, "{{COMPANY_NAME}}"), /*#__PURE__*/React.createElement("span", {
+  }, "EMBER"), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: 'var(--font-label)',
       fontSize: 8,
@@ -3333,7 +5789,7 @@ function TopNav({
       color: 'var(--gold-400)',
       marginTop: 3
     }
-  }, "{{COMPANY_TAGLINE}}"))), isMobile ? /*#__PURE__*/React.createElement("div", {
+  }, "Tobacco\xA0Co."))), isMobile ? /*#__PURE__*/React.createElement("div", {
     style: {
       flex: 1
     }
@@ -3520,6 +5976,7 @@ function TopNav({
     n: "x",
     s: 18
   }))), /*#__PURE__*/React.createElement("div", {
+    className: "ember-scroll",
     style: {
       maxHeight: 360,
       overflowY: 'auto',
@@ -3630,8 +6087,124 @@ window.TopNav = TopNav;
 
 // ui_kits/storefront/data.js
 try { (() => {
-/* {{COMPANY_NAME}} — sample catalogue (placeholder data). */
-window.PRODUCTS = [{ id: 'product-1', brand: '{{BRAND_NAME}}', name: '{{PRODUCT_1_NAME}}', cat: 'category', style: 'cat-1', price: 0, rating: 4.7, ratingCount: 18, unit: '{{UNIT}}', stock: 'instock', accent: 'var(--blue-400)' }, { id: 'product-2', brand: '{{BRAND_NAME}}', name: '{{PRODUCT_2_NAME}}', cat: 'category', style: 'cat-1', price: 0, oldPrice: 0, discount: '{{DISCOUNT}}', rating: 4.8, ratingCount: 24, unit: '{{UNIT}}', stock: 'instock', flag: '{{FLAG}}', accent: 'var(--ember-500)' }, { id: 'product-3', brand: '{{BRAND_NAME}}', name: '{{PRODUCT_3_NAME}}', cat: 'category', style: 'cat-1', price: 0, rating: 4.6, ratingCount: 12, unit: '{{UNIT}}', stock: 'low', accent: 'var(--gold-500)' }, { id: 'product-4', brand: '{{BRAND_NAME}}', name: '{{PRODUCT_4_NAME}}', cat: 'category', style: 'cat-2', price: 0, oldPrice: 0, discount: '{{DISCOUNT}}', rating: 4.9, ratingCount: 31, unit: '{{UNIT}}', stock: 'instock', flag: '{{FLAG}}', accent: 'var(--green-500)' }, { id: 'product-5', brand: '{{BRAND_NAME}}', name: '{{PRODUCT_5_NAME}}', cat: 'category', style: 'cat-2', price: 0, rating: 4.8, ratingCount: 27, unit: '{{UNIT}}', stock: 'instock', flag: '{{FLAG}}', accent: 'var(--blue-400)' }, { id: 'product-6', brand: '{{BRAND_NAME}}', name: '{{PRODUCT_6_NAME}}', cat: 'category', style: 'cat-1', price: 0, rating: 4.5, ratingCount: 9, unit: '{{UNIT}}', stock: 'instock', accent: 'var(--cream-400)' }, { id: 'product-7', brand: '{{BRAND_NAME}}', name: '{{PRODUCT_7_NAME}}', cat: 'category', style: 'cat-2', price: 0, oldPrice: 0, discount: '{{DISCOUNT}}', rating: 4.9, ratingCount: 21, unit: '{{UNIT}}', stock: 'instock', flag: '{{FLAG}}', accent: 'var(--blue-400)' }, { id: 'product-8', brand: '{{BRAND_NAME_2}}', name: '{{PRODUCT_8_NAME}}', cat: 'category', style: 'cat-1', price: 0, rating: 4.9, ratingCount: 17, unit: '{{UNIT}}', stock: 'instock', flag: '{{FLAG}}', accent: 'var(--gold-400)' }];
+/* Ember Tobacco Co. — catalogue (Manchester range + Seven Stars).
+ * Prices indicative only. Product photos in assets/products/<id>.png */
+window.EMBER_PRODUCTS = [{
+  id: 'man-sapphire',
+  brand: 'Manchester',
+  name: 'Sapphire 16mc',
+  cat: 'cigarettes',
+  style: 'regular',
+  price: 38.95,
+  rating: 4.7,
+  ratingCount: 18,
+  unit: 'per pack',
+  stock: 'instock',
+  accent: 'var(--blue-400)',
+  image: 'assets/products/man-sapphire.png'
+}, {
+  id: 'man-royal',
+  brand: 'Manchester',
+  name: 'Royal 16mc',
+  cat: 'cigarettes',
+  style: 'regular',
+  price: 38.95,
+  oldPrice: 44.95,
+  discount: '13% OFF',
+  rating: 4.8,
+  ratingCount: 24,
+  unit: 'per pack',
+  stock: 'instock',
+  flag: 'Popular',
+  accent: 'var(--ember-500)',
+  image: 'assets/products/man-royal.png'
+}, {
+  id: 'man-special',
+  brand: 'Manchester',
+  name: 'Special 10mc',
+  cat: 'cigarettes',
+  style: 'regular',
+  price: 36.95,
+  rating: 4.6,
+  ratingCount: 12,
+  unit: 'per pack',
+  stock: 'low',
+  accent: 'var(--gold-500)',
+  image: 'assets/products/man-special.png'
+}, {
+  id: 'man-green',
+  brand: 'Manchester',
+  name: 'Green Crush 6mc',
+  cat: 'cigarettes',
+  style: 'menthol',
+  price: 39.95,
+  oldPrice: 45.95,
+  discount: '13% OFF',
+  rating: 4.9,
+  ratingCount: 31,
+  unit: 'per pack',
+  stock: 'instock',
+  flag: 'Menthol',
+  accent: 'var(--green-500)',
+  image: 'assets/products/man-green.png'
+}, {
+  id: 'man-blue',
+  brand: 'Manchester',
+  name: 'Blue Crush 6mc',
+  cat: 'cigarettes',
+  style: 'menthol',
+  price: 39.95,
+  rating: 4.8,
+  ratingCount: 27,
+  unit: 'per pack',
+  stock: 'instock',
+  flag: 'Menthol',
+  accent: 'var(--blue-400)',
+  image: 'assets/products/man-blue.png'
+}, {
+  id: 'man-light',
+  brand: 'Manchester',
+  name: 'Light 10mc',
+  cat: 'cigarettes',
+  style: 'regular',
+  price: 37.95,
+  rating: 4.5,
+  ratingCount: 9,
+  unit: 'per pack',
+  stock: 'instock',
+  accent: 'var(--cream-400)',
+  image: 'assets/products/man-light.png'
+}, {
+  id: 'man-double',
+  brand: 'Manchester',
+  name: 'Double Drive',
+  cat: 'cigarettes',
+  style: 'menthol',
+  price: 41.95,
+  oldPrice: 47.95,
+  discount: '12% OFF',
+  rating: 4.9,
+  ratingCount: 21,
+  unit: 'per pack',
+  stock: 'instock',
+  flag: 'Dual menthol',
+  accent: 'var(--blue-400)',
+  image: 'assets/products/man-double-drive.png'
+}, {
+  id: 'sevenstars',
+  brand: 'Seven Stars',
+  name: 'Charcoal Filter 10',
+  cat: 'cigarettes',
+  style: 'regular',
+  price: 46.95,
+  rating: 4.9,
+  ratingCount: 17,
+  unit: 'per pack',
+  stock: 'instock',
+  flag: 'Japan',
+  accent: 'var(--gold-400)',
+  image: 'assets/products/sevenstars.png'
+}];
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/data.js", error: String((e && e.message) || e) }); }
 
 // ui_kits/storefront/icons.js

@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{COMPANY_NAME}} — Storefront</title>
+<title>Storefront</title>
 <link rel="stylesheet" href="../../styles.css">
 <style>
   * { box-sizing: border-box; }
@@ -23,6 +23,13 @@
   @media (prefers-reduced-motion: reduce) {
     [data-reveal] .ember-rise, [data-reveal] .ember-fade, [data-reveal] .ember-zoom { animation: none; }
   }
+
+  /* Themed scrollbar to match the dark + gold palette */
+  .ember-scroll { scrollbar-width: thin; scrollbar-color: var(--line-gold) transparent; }
+  .ember-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+  .ember-scroll::-webkit-scrollbar-track { background: transparent; }
+  .ember-scroll::-webkit-scrollbar-thumb { background: var(--line-gold); border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
+  .ember-scroll::-webkit-scrollbar-thumb:hover { background: var(--gold-300); background-clip: padding-box; }
 
   /* Hover lift micro-interaction */
   .lift { transition: transform 0.2s var(--ease-out, ease), border-color 0.2s, box-shadow 0.2s; }

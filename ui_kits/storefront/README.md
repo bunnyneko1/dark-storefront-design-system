@@ -1,6 +1,6 @@
-# Storefront UI Kit — {{COMPANY_NAME}}
+# Storefront UI Kit — Ember Tobacco Co.
 
-A dark, premium e-commerce storefront template. All brand, product, and copy text is `{{TOKEN}}` placeholders — fill them in to make it your own.
+A high-fidelity recreation of the Ember e-commerce storefront: a dark, premium tobacco shop for the Australian market.
 
 ## Run
 Open `index.html`. It loads the compiled design-system bundle (`_ds_bundle.js`) plus the kit's own screen components.

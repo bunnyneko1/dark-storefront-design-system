@@ -111,7 +111,7 @@ function Checkout({ items, onBack, onPlace, payError }) {
               <Icon n="lock" s={13} /> Secured by Zap Pay · you&rsquo;ll confirm payment on the next step
             </p>
           </Section>
-          <Button type="submit" variant="primary" size="lg" fullWidth disabled={items.length === 0}>Place order · ${total.toFixed(2)}</Button>
+          <Button type="submit" variant="primary" size="lg" fullWidth disabled={items.length === 0}>Place order</Button>
         </form>
 
         {/* Summary */}
@@ -131,7 +131,7 @@ function Checkout({ items, onBack, onPlace, payError }) {
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: 13.5, color: 'var(--text-body)', margin: 0 }}>{i.brand} {i.name}</p>
                   <p style={{ fontFamily: 'var(--font-mono)', fontSize: 11.5, color: 'var(--text-faint)', margin: '3px 0 0' }}>Qty {i.qty}</p>
                 </div>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13.5, fontWeight: 600, color: 'var(--gold-300)', flexShrink: 0 }}>${(i.price * i.qty).toFixed(2)}</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13.5, fontWeight: 600, color: 'var(--gold-300)', flexShrink: 0 }}></span>
               </div>
             ))}
           </div>
@@ -139,14 +139,14 @@ function Checkout({ items, onBack, onPlace, payError }) {
             {[['Subtotal', subtotal], ['Shipping', shipping]].map(([k, v]) => (
               <div key={k} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
                 <span style={{ fontFamily: 'var(--font-body)', fontSize: 13.5, color: 'var(--text-muted)' }}>{k}</span>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13.5, color: 'var(--text-body)' }}>${v.toFixed(2)}</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13.5, color: 'var(--text-body)' }}></span>
               </div>
             ))}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', paddingTop: 12, marginTop: 4, borderTop: '1px solid var(--line)' }}>
               <span style={{ fontFamily: 'var(--font-label)', fontSize: 12, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>Total</span>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 600, color: 'var(--text-strong)' }}>${total.toFixed(2)}</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 600, color: 'var(--text-strong)' }}></span>
             </div>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'var(--text-faint)', margin: '12px 0 0' }}>{'{{CHECKOUT_NOTE}}'}</p>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'var(--text-faint)', margin: '12px 0 0' }}>Includes GST.</p>
           </div>
         </aside>
       </div>

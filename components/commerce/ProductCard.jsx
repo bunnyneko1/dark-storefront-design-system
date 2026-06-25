@@ -3,7 +3,7 @@ import { Badge } from '../core/Badge.jsx';
 import { Button } from '../core/Button.jsx';
 
 /**
- * Storefront product tile.
+ * Storefront product tile for cigarettes / cigars / accessories.
  * Renders a CSS "pack" placeholder unless an `image` URL is supplied.
  */
 export function ProductCard({

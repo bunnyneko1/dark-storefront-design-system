@@ -19,6 +19,7 @@
               "components/commerce/**",
               "components/core/**",
               "components/forms/**",
+              "ui_kits/admin/**",
               "ui_kits/storefront/**"
             ],
             "message": "Import design-system components from 'index.js', not component internals."

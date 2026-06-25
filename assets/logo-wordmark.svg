@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" width="360" height="96" role="img" aria-label="{{COMPANY_NAME}}">
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" width="360" height="96" role="img" aria-label="Ember Tobacco Co.">
+  
   <g transform="translate(8,20)">
     <path d="M28 4 L48 28 L28 52 L8 28 Z" fill="none" stroke="#CDA85B" stroke-width="1.6"></path>
     <path d="M28 14 L39 28 L28 42 L17 28 Z" fill="#1A1714"></path>
@@ -7,7 +7,7 @@
     <circle cx="28" cy="28" r="2.1" fill="#E3C77E"></circle>
   </g>
   
-  <text x="78" y="50" font-family="&#39;Bodoni Moda&#39;, &#39;Times New Roman&#39;, serif" font-size="40" font-weight="600" letter-spacing="2" fill="#F6F1E7">{{COMPANY_NAME}}</text>
-  <text x="80" y="74" font-family="&#39;Hanken Grotesk&#39;, sans-serif" font-size="11.5" font-weight="600" letter-spacing="5.2" fill="#CDA85B">{{COMPANY_TAGLINE}}</text>
+  <text x="78" y="50" font-family="&#39;Bodoni Moda&#39;, &#39;Times New Roman&#39;, serif" font-size="40" font-weight="600" letter-spacing="2" fill="#F6F1E7">EMBER</text>
+  <text x="80" y="74" font-family="&#39;Hanken Grotesk&#39;, sans-serif" font-size="11.5" font-weight="600" letter-spacing="5.2" fill="#CDA85B">TOBACCO  CO.</text>
   <line x1="80" y1="60" x2="300" y2="60" stroke="#CDA85B" stroke-opacity="0.32" stroke-width="1"></line>
 </svg>

@@ -1,8 +1,8 @@
-# {{COMPANY_NAME}} — Design System
+# Ember Tobacco Co. — Design System
 
-A dark, premium e-commerce **design-system template** for **{{COMPANY_NAME}}**. Warm near-black charcoal lit by brass/gold and oxblood ember, didone display type, restrained near-sharp geometry. Built for a clean, professional shopping experience.
+A dark, premium design system for **Ember Tobacco Co.**, a fictional Australian tobacco shop e-commerce storefront. Warm near-black charcoal lit by brass/gold and oxblood ember, didone display type, restrained near-sharp geometry. Built for a clean, professional shopping experience.
 
-> **Template:** This is a pure template. Brand name, product catalogue, marketing copy, and imagery are all `{{TOKEN}}` placeholders or empty image slots. The visual system (colours, type, spacing, components) is ready to use as-is — replace the placeholders with your own content to make it yours.
+> **Provenance:** No codebase, Figma, or brand assets were supplied — this system was designed from scratch against the brief: *"a modern e-commerce website for a tobacco shop in Australia; clean and professional; navigation bar, product listing with cigarette brands, and a cart; dark premium colour scheme."* Brand name, palette, type, logo, and copy are all original. Brand names used in the sample catalogue (Dunhill, Winfield, etc.) are placeholders for layout only.
 
 ---
 
@@ -30,20 +30,21 @@ A dark, premium e-commerce **design-system template** for **{{COMPANY_NAME}}**. 
 
 ## CONTENT FUNDAMENTALS
 
-**Vibe.** Composed, understated luxury — a discreet specialist shop, not a discount outlet. The tone is that of a refined specialist merchant: confident, factual, quiet.
+**Vibe.** Composed, adult, understated luxury — a discreet specialist shop, not a discount outlet. The tone is that of a fine spirits or cigar merchant: confident, factual, quiet.
 
-**Person.** Address the customer as **you**. The shop refers to itself as **{{COMPANY_NAME}}** or **we**. Never first-person singular.
+**Person.** Address the customer as **you**. The shop refers to itself as **Ember** or **we**. Never first-person singular.
 
 **Casing.** Sentence case for headings and body. Product *names* may use the display serif. Eyebrows, button labels, and micro-labels are UPPERCASE with wide tracking (0.14–0.26em). Never shout in body copy with all-caps.
 
 **Tone rules.**
 - Plain, factual product copy — brand, variant, pack size, price. No adjectives like "amazing".
 - No hype, slang, or emoji.
-- Prices shown with any applicable tax; e.g. "$0.00", "{{UNIT}}". Sale prices show a struck-through original and a discount badge.
+- Prices shown with GST; "$54.95", "per pack", "per cigar", "per pouch". Sale prices show a struck-through original and a discount badge.
 
 **Examples.**
-- Hero: `{{HERO_HEADLINE}}` — your primary value proposition, with `{{HERO_SUBTITLE}}` supporting it.
-- Trust: `{{TRUST_1}}` / `{{TRUST_2}}` / `{{TRUST_3}}` / `{{TRUST_4}}` — short reassurance badges.
+- Hero: *"Premium tobacco, delivered discreetly across Australia."*
+- Sub: *"A curated range of cigarettes, cigars and rolling tobacco from trusted brands — fast, discreet shipping nationwide."*
+- Trust: *"Discreet, secure checkout."* / *"Fast nationwide shipping."* / *"7-day satisfaction guarantee."*
 
 ---
 
@@ -81,7 +82,7 @@ A dark, premium e-commerce **design-system template** for **{{COMPANY_NAME}}**. 
 
 **Usage.** Line icons only, ~16–20px, inherit `currentColor` (typically `--text-body` / `--text-muted`, brightening on hover). Common glyphs: `search`, `user`, `shopping-bag` (cart, with count badge), `x` (close), `trash-2` (remove), `heart`, `shield-check`, `truck`, `badge-check`, `refresh-cw`, `arrow-right`. Render with `lucide.createIcons()` after mount.
 
-**Logo / brand mark.** `assets/logo-wordmark.svg` and `assets/logo-mark.svg` — an **ember monogram**: a brass lozenge (an abstract ember/flame mark) with an oxblood + gold lit centre. Geometric, not illustrative. The wordmark text is a `{{COMPANY_NAME}}` placeholder; the same mark is inlined in the nav and footer. Swap in your own logo.
+**Logo / brand mark.** `assets/logo-wordmark.svg` and `assets/logo-mark.svg` — an **ember monogram**: a brass lozenge (lit-cigarette/ember abstraction) with an oxblood + gold lit centre. Geometric, not illustrative. The same mark is inlined in the nav and footer.
 
 **Emoji / unicode:** never used. The only non-icon glyphs are the mathematical minus (`−`) and plus in the quantity stepper, the star (`★`) for ratings, and `·` / `&` as typographic separators.
 
@@ -91,5 +92,5 @@ A dark, premium e-commerce **design-system template** for **{{COMPANY_NAME}}**. 
 
 1. **Fonts.** No brand font files were provided. Display **Bodoni Moda**, body **Hanken Grotesk**, mono **JetBrains Mono** are loaded from **Google Fonts** via `@import` in `tokens/fonts.css` (so the manifest reports 0 local `@font-face` files). If you have licensed brand fonts, drop the files in and replace the `@import` with `@font-face` rules.
 2. **Icons.** Lucide via CDN — substitute for a brand set if one exists.
-3. **Brand identity.** Replace the `{{COMPANY_NAME}}` / `{{COMPANY_TAGLINE}}` placeholders and the logo SVGs with your own name and mark. The palette and type are a ready-made starting point — keep or adjust.
+3. **Brand identity.** Name "Ember Tobacco Co.", palette, and logo are invented to fit the brief. Tell me if you have a real name/identity to align to.
 4. **Catalogue & imagery.** Sample products and placeholder visuals stand in for a real catalogue and photography. Drop real images onto the `<image-slot>` areas or pass `ProductCard image` / `data.js` image fields.

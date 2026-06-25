@@ -1,9 +1,9 @@
 Storefront product tile. Composes `Badge` (stock) and `Button` (add to cart). Shows a CSS pack placeholder unless `image` is given.
 
 ```jsx
-<ProductCard brand="{{BRAND_NAME}}" name="{{PRODUCT_NAME}}" price="$0.00" stock="instock" flag="{{FLAG}}" onAdd={add} />
-<ProductCard brand="{{BRAND_NAME}}" name="{{PRODUCT_NAME}}" price="$0.00" unit="{{UNIT}}" stock="low" />
-<ProductCard brand="{{BRAND_NAME}}" name="{{PRODUCT_NAME}}" price="$0.00" stock="out" />
+<ProductCard brand="Dunhill" name="Fine Cut · 20s" price="$54.95" stock="instock" flag="New" onAdd={add} />
+<ProductCard brand="Cohiba" name="Robusto Tubo" price="$78.00" unit="per cigar" stock="low" />
+<ProductCard brand="Winfield" name="Blue · 25s" price="$49.95" stock="out" />
 ```
 
 `stock`: `instock | low | out` (out renders a "Sold out" overlay and "Notify me"). Real product photography should replace the placeholder when supplied.

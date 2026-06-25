@@ -1,6 +1,6 @@
 ---
-name: design-system-template
-description: Use this skill to generate interfaces and assets from {{COMPANY_NAME}} — a dark, premium e-commerce design-system template, either for production or throwaway prototypes/mocks/etc. Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for prototyping. All brand/product/copy text is {{TOKEN}} placeholders to fill in.
+name: ember-tobacco-design
+description: Use this skill to generate well-branded interfaces and assets for Ember Tobacco Co. (a dark, premium Australian tobacco shop e-commerce brand), either for production or throwaway prototypes/mocks/etc. Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for prototyping.
 user-invocable: true
 ---
 
@@ -19,4 +19,4 @@ If the user invokes this skill without any other guidance, ask them what they wa
 
 ## Non-negotiables
 - Dark, warm-charcoal surfaces; cream text (never pure white); brass + ember accents only.
-- Calm, factual voice. No hype, slang, or emoji.
+- Adult, factual voice. No hype, slang, or emoji.

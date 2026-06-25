@@ -9,11 +9,12 @@ function ProductDetail({ product, related, onBack, onAdd, onOpen }) {
   const stockMap = { instock: ['instock', 'In stock'], low: ['low', 'Low stock'], out: ['out', 'Out of stock'] };
   const [tone, label] = stockMap[p.stock] || stockMap.instock;
 
-  const desc = `${p.brand} ${p.name} — {{PRODUCT_DESCRIPTION}}`;
+  const catWord = { cigarettes: 'cigarettes', cigars: 'cigars', rolling: 'rolling tobacco', accessories: 'accessory' }[p.cat] || 'tobacco';
+  const desc = `${p.brand} ${p.name} — a ${catWord} selection from our curated range, ${p.unit}. Stored in a temperature-controlled, smoke-free facility and shipped discreetly across Australia.`;
   const details = [
     ['Brand', p.brand],
     ['Format', p.unit.replace(/^per /, '').replace(/^/, c => c.toUpperCase())],
-    ['Category', '{{CATEGORY}}'],
+    ['Category', catWord.charAt(0).toUpperCase() + catWord.slice(1)],
     ['SKU', p.id.toUpperCase()],
   ];
 
@@ -49,8 +50,7 @@ function ProductDetail({ product, related, onBack, onAdd, onOpen }) {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 20 }}>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 34, fontWeight: 600, color: 'var(--gold-300)' }}>${p.price.toFixed(2)}</span>
-            {p.oldPrice && <span style={{ fontFamily: 'var(--font-mono)', fontSize: 18, color: 'var(--text-faint)', textDecoration: 'line-through' }}>${p.oldPrice.toFixed(2)}</span>}
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 34, fontWeight: 600, color: 'var(--gold-300)' }}></span>
             <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--text-faint)' }}>{p.unit}</span>
           </div>
 
@@ -78,11 +78,11 @@ function ProductDetail({ product, related, onBack, onAdd, onOpen }) {
       {/* Related */}
       {related && related.length > 0 && (
         <section style={{ padding: '72px 0 0' }}>
-          <SectionHead eyebrow="You may also like" title="{{RELATED_TITLE}}" />
+          <SectionHead eyebrow="You may also like" title="More from the range" />
           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2, minmax(0, 1fr))' : 'repeat(4, minmax(0, 1fr))', gap: isMobile ? 12 : 20 }}>
             {related.map(r => (
-              <ProductCard key={r.id} brand={r.brand} name={r.name} price={'$' + r.price.toFixed(2)}
-                oldPrice={r.oldPrice ? '$' + r.oldPrice.toFixed(2) : undefined} discount={r.discount} image={r.image}
+              <ProductCard key={r.id} brand={r.brand} name={r.name} price={''}
+                oldPrice={undefined} discount={r.discount} image={r.image}
                 rating={r.rating} ratingCount={r.ratingCount} unit={r.unit} stock={r.stock} flag={r.flag} accent={r.accent} fit={r.fit}
                 onAdd={() => onAdd(r, 1)} onOpen={() => onOpen(r)} />
             ))}

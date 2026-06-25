@@ -21,7 +21,7 @@
   const { Button, IconButton, Badge, Tag } = window.EmberTobaccoCoDesignSystem_3a8c24;
   const Ic = ({n}) => React.createElement('i', {'data-lucide': n, style:{width:18, height:18}});
   function Demo(){
-    const [cat, setCat] = React.useState('all');
+    const [cat, setCat] = React.useState('cigarettes');
     return (<div>
       <div className="grp"><p className="lbl">Buttons</p>
         <Button variant="primary">Add to cart</Button>
@@ -46,10 +46,10 @@
         <Badge tone="low">Low stock</Badge>
         <Badge tone="out">Out of stock</Badge>
         <Badge tone="gold" variant="solid">Limited</Badge>
-        <Badge tone="ember">Featured</Badge>
+        <Badge tone="ember">Aged</Badge>
       </div>
       <div className="grp"><p className="lbl">Tags / filters</p>
-        {['all','new','sale','popular'].map(c =>
+        {['cigarettes','cigars','rolling','accessories'].map(c =>
           <Tag key={c} selectable selected={cat===c} onClick={()=>setCat(c)}>{c[0].toUpperCase()+c.slice(1)}</Tag>)}
       </div>
     </div>);

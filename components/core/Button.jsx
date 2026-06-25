@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * Primary action. Brass-filled by default; ember + ghost + outline variants.
+ * Ember primary action. Brass-filled by default; ember + ghost + outline variants.
  */
 export function Button({
   children,

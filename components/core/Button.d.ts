@@ -16,7 +16,7 @@ export interface ButtonProps {
 }
 
 /**
- * Primary call-to-action for the storefront — uppercase, tracked, brass-filled.
+ * Primary call-to-action for the Ember storefront — uppercase, tracked, brass-filled.
  * @startingPoint section="Core" subtitle="Brass / ember / outline / ghost actions" viewport="700x200"
  */
 export function Button(props: ButtonProps): JSX.Element;

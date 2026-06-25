@@ -3,16 +3,16 @@ function App() {
   const [view, setView] = React.useState({ name: 'home' });
   const [cartOpen, setCartOpen] = React.useState(false);
   const [items, setItems] = React.useState(() => {
-    try { const s = localStorage.getItem('cart'); return s ? JSON.parse(s) : []; } catch (e) { return []; }
+    try { const s = localStorage.getItem('ember_cart'); return s ? JSON.parse(s) : []; } catch (e) { return []; }
   });
   // Persist cart across reloads.
   React.useEffect(() => {
-    try { localStorage.setItem('cart', JSON.stringify(items)); } catch (e) {}
+    try { localStorage.setItem('ember_cart', JSON.stringify(items)); } catch (e) {}
   }, [items]);
   const [shopCat, setShopCat] = React.useState('all');
   const [toast, setToast] = React.useState(null);
   const toastTimer = React.useRef(null);
-  const products = window.PRODUCTS || [];
+  const products = window.EMBER_PRODUCTS || [];
 
   // Handle return from Zap Pay (live mode): ?success=true&orderId=…
   React.useEffect(() => {
@@ -52,7 +52,7 @@ function App() {
   const openProduct = (p) => go({ name: 'product', product: p });
   const goCheckout = () => { setCartOpen(false); go({ name: 'checkout' }); };
   const placeOrder = (total) => {
-    const number = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
+    const number = 'EM-' + Math.floor(100000 + Math.random() * 900000);
     // Live: hand off to Zap Pay (redirects out, returns to this page).
     if (window.ZapPay && window.ZapPay.isLive()) {
       sessionStorage.setItem('zap_total', String(total));

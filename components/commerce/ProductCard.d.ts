@@ -30,7 +30,7 @@ export interface ProductCardProps {
 }
 
 /**
- * Storefront product tile — placeholder pack visual,
+ * Storefront product tile (cigarettes, cigars, accessories) — placeholder pack visual,
  * brand/name, stock badge, mono price, add-to-cart.
  * @startingPoint section="Commerce" subtitle="Product tile with stock + price + add to cart" viewport="320x420"
  */
